@@ -27,25 +27,27 @@
     </header>
 
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="bubble-sort.html">Bubble Sort</a></li>
-        <li><a href="">Insertion Sort</a></li>
-        <li><a href="">Selection Sort</a></li>
-        <li><a href="">Shell Sort</a></li>
-        <li><a href="">Merge Sort</a></li>
-        <li><a href="">Quick Sort</a></li>
-      </ul>
+      <div id="nav-parent">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="bubble-sort.html">Bubble Sort</a></li>
+          <li><a href="">Insertion Sort</a></li>
+          <li><a href="">Selection Sort</a></li>
+          <li><a href="">Shell Sort</a></li>
+          <li><a href="">Merge Sort</a></li>
+          <li><a href="">Quick Sort</a></li>
+        </ul>
+      </div>
     </nav>
 
     <main>
-      <div>
-        <div id="div-canvas">
-          <canvas id="canvas" width="1000" height="240"></canvas>
-        </div>
+      <div id="main-parent">
+        <div>
+          <div id="div-canvas">
+            <canvas id="canvas" width="800" height="240"></canvas>
+          </div>
 
-        <div id="div-inputs">
-          <div class="div-inputs-input">
+          <div id="div-inputs">
             <input
               type="range"
               width="300"
@@ -54,11 +56,7 @@
               step="2"
               id="input-slider"
             />
-          </div>
-          <div class="div-inputs-input">
             <button id="input-button-randomise">Randomise</button>
-          </div>
-          <div class="div-inputs-input">
             <button id="input-button-sort">Sort</button>
           </div>
         </div>
