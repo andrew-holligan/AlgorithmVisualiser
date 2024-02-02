@@ -24,7 +24,7 @@ buttonRandomise.onclick = function () {
 // initial canvas
 window.onload = function () {
   // draw first frame with 10 items
-  drawOrderedElts(10);
+  drawOrderedElts(60);
 };
 
 function drawOrderedElts(n) {

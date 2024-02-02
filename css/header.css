@@ -1,0 +1,13 @@
+body {
+  font-family: Arial;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 60px;
+
+  color: #cc313d;
+}

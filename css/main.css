@@ -1,0 +1,26 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+  padding: 20px;
+
+  height: auto;
+
+  border-radius: 40px;
+  border: 2px solid #cc313d;
+}
+
+#div-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 16px;
+}
+
+.div-inputs-input button {
+  height: 40px;
+  width: 200px;
+}

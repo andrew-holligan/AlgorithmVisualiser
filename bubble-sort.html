@@ -12,7 +12,10 @@
     <title>Algorithm Visualiser - Bubble Sort</title>
 
     <!-- css -->
+    <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/nav.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
 
     <!-- js -->
     <script type="module" src="./js/pages/bubble-sort-page.js"></script>
@@ -36,20 +39,37 @@
     </nav>
 
     <main>
-      <canvas id="canvas" width="300" height="200"></canvas><br />
-      <input
-        type="range"
-        width="300"
-        min="10"
-        max="20"
-        step="2"
-        id="input-slider"
-      /><br />
-      <button id="input-button-randomise">randomise</button>
+      <div>
+        <div id="div-canvas">
+          <canvas id="canvas" width="1000" height="240"></canvas>
+        </div>
+
+        <div id="div-inputs">
+          <div class="div-inputs-input">
+            <input
+              type="range"
+              width="300"
+              min="20"
+              max="100"
+              step="2"
+              id="input-slider"
+            />
+          </div>
+          <div class="div-inputs-input">
+            <button id="input-button-randomise">Randomise</button>
+          </div>
+          <div class="div-inputs-input">
+            <button id="input-button-sort">Sort</button>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer>
-      by <a href="https://github.com/andrew-holligan">andrew-holligan</a>
+      <p id="footer-left">
+        dev <a href="https://github.com/andrew-holligan">andrew-holligan</a>
+      </p>
+      <p id="footer-right">&copy 2024</p>
     </footer>
   </body>
 </html>
