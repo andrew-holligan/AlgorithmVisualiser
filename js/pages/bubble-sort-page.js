@@ -1,33 +1,38 @@
 import { Canvas } from "../canvas/canvas.js";
 import { BubbleSort } from "../algorithms/bubble-sort.js";
+import { generateArr, randomiseArr } from "../helpers.js";
 
-window.onload = function () {
-  init();
+// globals
+const c = new Canvas();
+let arr;
+
+// number of elts slider
+let slider = document.getElementById("input-slider");
+slider.oninput = function () {
+  drawOrderedElts(slider.value);
+};
+slider.onchange = function () {
+  drawOrderedElts(slider.value);
 };
 
-function init() {
-  // init variables
-  let n = 20;
-  let arr = generateRandomArr(n);
+// randomise button
+let buttonRandomise = document.getElementById("input-button-randomise");
+buttonRandomise.onclick = function () {
+  drawRandomisedElts(arr);
+};
 
-  // init canvas
-  const c = new Canvas();
+// initial canvas
+window.onload = function () {
+  // draw first frame with 10 items
+  drawOrderedElts(10);
+};
+
+function drawOrderedElts(n) {
+  arr = generateArr(n);
   c.drawFrame(arr);
 }
 
-function generateRandomArr(n) {
-  // arr = [1, 2, 3, ... , n]
-  let arr = [];
-  for (let i = 0; i < n; i++) {
-    arr[i] = i + 1;
-  }
-
-  // swap each index with a random index
-  for (let i = n - 1; i > 0; i--) {
-    // all indices above i have been randomised
-    let randomI = Math.floor(Math.random() * (i + 1));
-    // swap
-    [arr[randomI], arr[i]] = [arr[i], arr[randomI]];
-  }
-  return arr;
+function drawRandomisedElts(arr) {
+  arr = randomiseArr(arr);
+  c.drawFrame(arr);
 }

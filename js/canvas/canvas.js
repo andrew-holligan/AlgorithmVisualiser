@@ -23,6 +23,9 @@ export class Canvas {
   }
 
   drawFrame(arr) {
+    // clear frame
+    this.contex.clearRect(0, 0, this.xDimension, this.yDimension);
+
     let width = this.xDimension / arr.length;
     let heightChunk = this.yDimension / arr.length;
 

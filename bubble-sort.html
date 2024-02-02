@@ -10,6 +10,9 @@
     <meta name="author" content="andrew-holligan" />
 
     <title>Algorithm Visualiser - Bubble Sort</title>
+
+    <!-- js -->
+    <script type="module" src="./js/pages/bubble-sort-page.js"></script>
   </head>
 
   <body>
@@ -30,14 +33,20 @@
     </nav>
 
     <main>
-      <canvas id="canvas" width="300" height="200"></canvas>
+      <canvas id="canvas" width="300" height="200"></canvas><br />
+      <input
+        type="range"
+        width="300"
+        min="10"
+        max="20"
+        step="2"
+        id="input-slider"
+      /><br />
+      <button id="input-button-randomise">randomise</button>
     </main>
 
     <footer>
       by <a href="https://github.com/andrew-holligan">andrew-holligan</a>
     </footer>
-
-    <!-- js -->
-    <script type="module" src="./js/pages/bubble-sort-page.js"></script>
   </body>
 </html>
