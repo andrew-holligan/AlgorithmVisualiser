@@ -12,10 +12,12 @@
     <title>Algorithm Visualiser - Bubble Sort</title>
 
     <!-- css -->
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/nav.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/base/header.css" />
+    <link rel="stylesheet" href="./css/base/nav.css" />
+    <link rel="stylesheet" href="./css/base/main.css" />
+    <link rel="stylesheet" href="./css/base/footer.css" />
+
+    <link rel="stylesheet" href="./css/algorithm/algorithm.css" />
 
     <!-- js -->
     <script type="module" src="./js/pages/bubble-sort-page.js"></script>
@@ -23,31 +25,32 @@
 
   <body>
     <header>
-      <h1 id="test">Bubble Sort</h1>
+      <div class="heading">
+        <h1>Algorithm Visualiser</h1>
+      </div>
     </header>
 
     <nav>
-      <div id="nav-parent">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="bubble-sort.html">Bubble Sort</a></li>
-          <li><a href="">Insertion Sort</a></li>
-          <li><a href="">Selection Sort</a></li>
-          <li><a href="">Shell Sort</a></li>
-          <li><a href="">Merge Sort</a></li>
-          <li><a href="">Quick Sort</a></li>
-        </ul>
-      </div>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a id="nav-active" href="bubble-sort.html">Bubble Sort</a></li>
+        <li><a href="">Insertion Sort</a></li>
+        <li><a href="">Selection Sort</a></li>
+        <li><a href="">Shell Sort</a></li>
+        <li><a href="">Merge Sort</a></li>
+        <li><a href="">Quick Sort</a></li>
+      </ul>
     </nav>
 
     <main>
-      <div id="main-parent">
+      <div class="main-section">
+        <!-- this is bad but it works -->
         <div>
-          <div id="div-canvas">
+          <div class="canvas">
             <canvas id="canvas" width="800" height="240"></canvas>
           </div>
 
-          <div id="div-inputs">
+          <div class="canvas-inputs">
             <input
               type="range"
               width="300"
@@ -56,18 +59,23 @@
               step="2"
               id="input-slider"
             />
-            <button id="input-button-randomise">Randomise</button>
-            <button id="input-button-sort">Sort</button>
+            <button class="input-button" id="input-button-randomise">
+              Randomise
+            </button>
+            <button class="input-button" id="input-button-sort">Sort</button>
           </div>
         </div>
       </div>
     </main>
 
     <footer>
-      <p id="footer-left">
-        dev <a href="https://github.com/andrew-holligan">andrew-holligan</a>
-      </p>
-      <p id="footer-right">&copy 2024</p>
+      <div class="footer-left">
+        dev
+        <a class="footer-link" href="https://github.com/andrew-holligan"
+          >andrew-holligan</a
+        >
+      </div>
+      <div class="footer-right">&copy 2024</div>
     </footer>
   </body>
 </html>

@@ -5,7 +5,7 @@ export class Canvas {
     this.contex = canvas.getContext("2d");
 
     // properties
-    this.contex.fillStyle = "#cc313d";
+    this.contex.fillStyle = "#b300ff";
 
     this.xDimension = canvas.getAttribute("width");
     this.yDimension = canvas.getAttribute("height");

@@ -1,0 +1,34 @@
+/* STANDARD */
+/* 1. position */
+/* 2. size */
+/* 3. margin/padding */
+/* 4. border */
+/* 5. color */
+/* 6. font */
+
+footer {
+  margin-top: 20px;
+
+  color: var(--color-2);
+
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer-link {
+  text-decoration: none;
+
+  color: var(--color-1);
+}
+
+.footer-left {
+  float: left;
+
+  padding-inline: 40px;
+}
+
+.footer-right {
+  float: right;
+
+  padding-inline: 40px;
+}

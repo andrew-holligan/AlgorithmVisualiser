@@ -1,0 +1,73 @@
+/* STANDARD */
+/* 1. position */
+/* 2. size */
+/* 3. margin/padding */
+/* 4. border */
+/* 5. color */
+/* 6. font */
+
+.canvas-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 16px;
+}
+
+/* randomise and sort buttons */
+.input-button {
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+  margin-inline: 15px;
+
+  width: 200px;
+
+  border-radius: 20px;
+  border: 3px solid var(--color-3);
+
+  color: var(--color-1);
+  background: var(--color-2);
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.input-button:hover {
+  cursor: pointer;
+
+  border: 3px solid var(--color-4);
+}
+
+/* size slider */
+#input-slider {
+  /* get rid of default */
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* opacity change when hover over it */
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+
+  height: 5px;
+  width: 100%;
+
+  background: var(--color-2);
+}
+
+#input-slider:hover {
+  opacity: 1;
+}
+
+#input-slider::-webkit-slider-thumb {
+  cursor: pointer;
+}
+
+#input-slider::-moz-range-thumb {
+  cursor: pointer;
+}
