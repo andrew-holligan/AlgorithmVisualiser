@@ -1,14 +1,13 @@
 export class BubbleSort {
-  constructor(canvas, speed, arr) {
-    this.arr = arr;
+  constructor(canvas) {
+    this.arr;
 
     // for animation
     this.canvas = canvas;
-    this.speed = speed;
+    this.speed;
     this.interval;
     this.segments = [];
     this.count = 0;
-    this.index = 0;
   }
 
   sort() {
@@ -27,16 +26,37 @@ export class BubbleSort {
 
   animate() {
     let self = this;
+    let index = 0;
+    this.count = 0;
 
     function animation() {
-      if (self.index >= self.count) {
+      if (index >= self.count - 1) {
         clearInterval(self.interval);
+        console.log("stopped");
       }
-      self.canvas.drawFrame(self.segments[self.index]);
-      self.index++;
+      self.canvas.drawFrame(self.segments[index]);
+      index++;
     }
+
+    // reset segments array
+    this.segments.length = 0;
 
     this.sort();
     this.interval = setInterval(animation, this.speed);
+  }
+
+  stop() {
+    if (this.interval) {
+      clearInterval(this.interval);
+      this.interval = null;
+    }
+  }
+
+  setArr(arr) {
+    this.arr = arr;
+  }
+
+  setSpeed(speed) {
+    this.speed = speed;
   }
 }

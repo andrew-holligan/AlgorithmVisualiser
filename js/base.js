@@ -4,8 +4,10 @@ import { generateArr, randomiseArr } from "./helpers.js";
 import { BubbleSort } from "./algorithms/bubble-sort.js";
 
 // globals
-const canvas = new Canvas();
 const location = window.location.pathname.split("/").pop();
+const canvas = new Canvas();
+const bubbleSort = new BubbleSort(canvas);
+
 let arr;
 
 // initial canvas
@@ -29,6 +31,7 @@ slider.onchange = function () {
 // randomise button
 let buttonRandomise = document.getElementById("input-button-randomise");
 buttonRandomise.onclick = function () {
+  bubbleSort.stop();
   arr = randomiseArr(arr);
   canvas.drawFrame(arr);
 };
@@ -38,7 +41,8 @@ let buttonSort = document.getElementById("input-button-sort");
 switch (location) {
   case "bubble-sort.html":
     buttonSort.onclick = function () {
-      const bubbleSort = new BubbleSort(canvas, 10, arr);
+      bubbleSort.setArr(arr);
+      bubbleSort.setSpeed(10);
       bubbleSort.animate();
     };
     break;
