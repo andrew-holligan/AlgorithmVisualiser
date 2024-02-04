@@ -11,6 +11,12 @@
 
     <title>Algorithm Visualiser - Bubble Sort</title>
 
+    <!-- highlight.js -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+    />
+
     <!-- css -->
     <link rel="stylesheet" href="./css/base/header.css" />
     <link rel="stylesheet" href="./css/base/nav.css" />
@@ -85,7 +91,24 @@
         </div>
       </div>
 
-      <div class="main-section"></div>
+      <!-- TODO: this is terrible, ill fix css later -->
+      <div
+        class="main-section"
+        style="flex-direction: column; padding-bottom: 0px"
+      >
+        <h2 style="margin: 0px; color: #deacf5">Code</h2>
+        <pre style="margin: 0px">
+          <code class="language-javascript" style="border-radius: 20px;">
+for (let i = this.arr.length - 1; i >= 0; i--) {
+  for (let j = 0; j < i; j++) {
+    if (this.arr[j] > this.arr[j + 1]) {
+      [this.arr[j], this.arr[j + 1]] = [this.arr[j + 1], this.arr[j]];
+    }
+  }
+}
+          </code>
+        </pre>
+      </div>
     </main>
 
     <footer>
@@ -97,5 +120,11 @@
       </div>
       <div class="footer-right">&copy 2024</div>
     </footer>
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
   </body>
 </html>
