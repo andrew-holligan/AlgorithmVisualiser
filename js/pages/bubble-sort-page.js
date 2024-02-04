@@ -18,7 +18,7 @@ window.onload = function () {
 
 // slider
 // controls number of elements in array
-let slider = document.getElementById("input-slider");
+let slider = document.getElementById("input-slider-size");
 slider.oninput = function () {
   arr = generateArr(slider.value);
   resetAnimation();

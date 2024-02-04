@@ -51,18 +51,36 @@
           </div>
 
           <div class="canvas-inputs">
-            <input
-              type="range"
-              width="300"
-              min="20"
-              max="100"
-              step="2"
-              id="input-slider"
-            />
-            <button class="input-button" id="input-button-randomise">
-              Randomise
-            </button>
-            <button class="input-button" id="input-button-sort">Sort</button>
+            <div class="canvas-slider-labels">
+              <p>Size:</p>
+              <p>Speed:</p>
+            </div>
+            <div class="canvas-inputs-slider">
+              <input
+                type="range"
+                width="300"
+                min="20"
+                max="100"
+                step="2"
+                id="input-slider-size"
+                class="input-slider"
+              />
+              <input
+                type="range"
+                width="300"
+                min="20"
+                max="100"
+                step="2"
+                id="input-slider-speed"
+                class="input-slider"
+              />
+            </div>
+            <div class="canvas-inputs-buttons">
+              <button class="input-button" id="input-button-randomise">
+                Randomise
+              </button>
+              <button class="input-button" id="input-button-sort">Sort</button>
+            </div>
           </div>
         </div>
       </div>

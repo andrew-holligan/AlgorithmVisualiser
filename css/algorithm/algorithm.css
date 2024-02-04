@@ -9,9 +9,43 @@
 .canvas-inputs {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  flex-direction: row;
+
+  width: 100%;
 
   margin-top: 16px;
+}
+
+.canvas-slider-labels {
+  margin-right: 10px;
+}
+
+.canvas-slider-labels p {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 0px;
+
+  color: var(--color-4);
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.canvas-inputs-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.canvas-inputs-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* randomise and sort buttons */
@@ -25,13 +59,13 @@
   padding: 10px;
   margin-inline: 15px;
 
-  width: 200px;
+  height: 30px;
+  width: 120px;
 
   border-radius: 20px;
   border: 3px solid var(--color-3);
 
-  color: var(--color-1);
-  background: var(--color-2);
+  color: var(--color-4);
 
   font-size: 14px;
   font-weight: bold;
@@ -43,8 +77,16 @@
   border: 3px solid var(--color-4);
 }
 
+#input-button-randomise {
+  background: red;
+}
+
+#input-button-sort {
+  background: green;
+}
+
 /* size slider */
-#input-slider {
+.input-slider {
   /* get rid of default */
   -webkit-appearance: none;
   appearance: none;
@@ -57,17 +99,20 @@
   height: 5px;
   width: 100%;
 
+  margin-top: 12px;
+  margin-bottom: 12px;
+
   background: var(--color-2);
 }
 
-#input-slider:hover {
+.input-slider:hover {
   opacity: 1;
 }
 
-#input-slider::-webkit-slider-thumb {
+.input-slider::-webkit-slider-thumb {
   cursor: pointer;
 }
 
-#input-slider::-moz-range-thumb {
+.input-slider::-moz-range-thumb {
   cursor: pointer;
 }
