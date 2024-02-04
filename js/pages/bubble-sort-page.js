@@ -1,7 +1,6 @@
-import { Canvas } from "./canvas/canvas.js";
-import { generateArr, randomiseArr } from "./helpers.js";
-
-import { BubbleSort } from "./algorithms/bubble-sort.js";
+import { Canvas } from "../canvas/canvas.js";
+import { generateArr, randomiseArr } from "../helpers.js";
+import { BubbleSort } from "../algorithms/bubble-sort.js";
 
 // globals
 const location = window.location.pathname.split("/").pop();
@@ -9,41 +8,47 @@ const canvas = new Canvas();
 const bubbleSort = new BubbleSort(canvas);
 
 let arr;
+let speed = 10;
 
 // initial canvas
 window.onload = function () {
-  // draw first frame with 60 items
   arr = generateArr(60);
   canvas.drawFrame(arr);
 };
 
-// number of elemtents slider
+// slider
+// controls number of elements in array
 let slider = document.getElementById("input-slider");
 slider.oninput = function () {
   arr = generateArr(slider.value);
+  resetAnimation();
   canvas.drawFrame(arr);
 };
 slider.onchange = function () {
   arr = generateArr(slider.value);
+  resetAnimation();
   canvas.drawFrame(arr);
 };
 
-// randomise button
+// button
+// controls randomising the array
 let buttonRandomise = document.getElementById("input-button-randomise");
 buttonRandomise.onclick = function () {
-  bubbleSort.stop();
   arr = randomiseArr(arr);
+  resetAnimation();
   canvas.drawFrame(arr);
 };
 
-// sort button
+// button
+// controls starting the sort animation
 let buttonSort = document.getElementById("input-button-sort");
-switch (location) {
-  case "bubble-sort.html":
-    buttonSort.onclick = function () {
-      bubbleSort.setArr(arr);
-      bubbleSort.setSpeed(10);
-      bubbleSort.animate();
-    };
-    break;
+buttonSort.onclick = function () {
+  resetAnimation();
+  bubbleSort.animate();
+};
+
+function resetAnimation() {
+  bubbleSort.stop();
+  bubbleSort.setArr(arr);
+  bubbleSort.setSpeed(speed);
 }

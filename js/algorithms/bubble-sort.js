@@ -32,22 +32,25 @@ export class BubbleSort {
     function animation() {
       if (index >= self.count - 1) {
         clearInterval(self.interval);
-        console.log("stopped");
+        console.log("animation stopped");
+      } else {
+        self.canvas.drawFrame(self.segments[index]);
+        index++;
       }
-      self.canvas.drawFrame(self.segments[index]);
-      index++;
     }
 
     // reset segments array
     this.segments.length = 0;
 
     this.sort();
+    console.log("animation started");
     this.interval = setInterval(animation, this.speed);
   }
 
   stop() {
     if (this.interval) {
       clearInterval(this.interval);
+      console.log("animation stopped");
       this.interval = null;
     }
   }
