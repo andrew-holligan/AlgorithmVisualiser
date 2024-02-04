@@ -1,5 +1,5 @@
 import { Canvas } from "../canvas/canvas.js";
-import { generateArr, randomiseArr } from "../helpers.js";
+import { generateArr, randomiseArr, mapSpeed } from "../helpers.js";
 import { BubbleSort } from "../algorithms/bubble-sort.js";
 
 // globals
@@ -8,7 +8,7 @@ const canvas = new Canvas();
 const bubbleSort = new BubbleSort(canvas);
 
 let arr;
-let speed = 10;
+let speed;
 
 // initial canvas
 window.onload = function () {
@@ -18,16 +18,29 @@ window.onload = function () {
 
 // slider
 // controls number of elements in array
-let slider = document.getElementById("input-slider-size");
-slider.oninput = function () {
-  arr = generateArr(slider.value);
+let sliderSize = document.getElementById("input-slider-size");
+sliderSize.oninput = function () {
+  arr = generateArr(sliderSize.value);
   resetAnimation();
   canvas.drawFrame(arr);
 };
-slider.onchange = function () {
-  arr = generateArr(slider.value);
+sliderSize.onchange = function () {
+  arr = generateArr(sliderSize.value);
   resetAnimation();
   canvas.drawFrame(arr);
+};
+
+// slider
+// controls speed of animation
+let sliderSpeed = document.getElementById("input-slider-speed");
+sliderSpeed.oninput = function () {
+  speed = mapSpeed(sliderSpeed.value, 20, 100, 500, 0);
+  resetAnimation();
+  // canvas.drawFrame(arr);
+};
+sliderSpeed.onchange = function () {
+  speed = mapSpeed(sliderSpeed.value, 20, 100, 500, 0);
+  resetAnimation();
 };
 
 // button
