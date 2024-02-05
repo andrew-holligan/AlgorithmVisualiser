@@ -1,31 +1,18 @@
 export class Canvas {
-  constructor() {
-    // init canvas
-    this.canvas = document.getElementById("canvas");
-    this.contex = canvas.getContext("2d");
+  static drawFrame(arr, colourIndices = []) {
+    let canvas = document.getElementById("canvas");
+    let context = canvas.getContext("2d");
+    let xDimension = canvas.getAttribute("width");
+    let yDimension = canvas.getAttribute("height");
 
-    this.xDimension = canvas.getAttribute("width");
-    this.yDimension = canvas.getAttribute("height");
-  }
+    let width = xDimension / arr.length;
+    let heightChunk = yDimension / arr.length;
 
-  #drawRect(x, y, width, height, colour) {
-    this.contex.fillStyle = colour;
-
-    this.contex.beginPath();
-    this.contex.fillRect(x, y, width, height);
-    this.contex.stroke();
-  }
-
-  drawFrame(arr, colourIndices = []) {
-    let width = this.xDimension / arr.length;
-    let heightChunk = this.yDimension / arr.length;
-    let self = this;
-
-    function draw() {
-      let colour;
+    window.requestAnimationFrame(() => {
       // clear frame
-      self.contex.clearRect(0, 0, self.xDimension, self.yDimension);
+      context.clearRect(0, 0, xDimension, yDimension);
 
+      let colour;
       for (let i = 0; i < arr.length; i++) {
         // colour the swapped elements
         if (colourIndices.includes(i)) {
@@ -34,17 +21,24 @@ export class Canvas {
           colour = "#deacf5";
         }
 
-        self.#drawRect(
+        Canvas.#drawRect(
+          context,
           i * width,
           // draws downwards
-          self.yDimension - arr[i] * heightChunk,
+          yDimension - arr[i] * heightChunk,
           width,
           arr[i] * heightChunk,
           colour
         );
       }
-    }
+    });
+  }
 
-    window.requestAnimationFrame(draw);
+  static #drawRect(context, x, y, width, height, colour) {
+    context.fillStyle = colour;
+
+    context.beginPath();
+    context.fillRect(x, y, width, height);
+    context.stroke();
   }
 }

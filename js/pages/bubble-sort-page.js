@@ -4,7 +4,6 @@ import { generateArr, randomiseArr, mapSpeed } from "../misc/helpers.js";
 import { BubbleSort } from "../algorithms/bubble-sort.js";
 
 // globals
-const canvas = new Canvas();
 let animation;
 let arr;
 let swaps;
@@ -15,7 +14,7 @@ window.onload = function () {
   animation = null;
   arr = generateArr(60);
   speed = mapSpeed(60, 20, 100, 500, 0);
-  canvas.drawFrame(arr);
+  Canvas.drawFrame(arr);
 };
 
 // slider
@@ -23,11 +22,11 @@ window.onload = function () {
 let sliderSize = document.getElementById("input-slider-size");
 sliderSize.oninput = function () {
   arr = generateArr(sliderSize.value);
-  canvas.drawFrame(arr);
+  Canvas.drawFrame(arr);
 };
 sliderSize.onchange = function () {
   arr = generateArr(sliderSize.value);
-  canvas.drawFrame(arr);
+  Canvas.drawFrame(arr);
 };
 
 // slider
@@ -79,8 +78,7 @@ buttonRandomise.onclick = function () {
   // initialise new animation
   animation = new SortAnimation(canvas, arr, swaps, speed);
 
-  console.log(arr);
-  canvas.drawFrame(arr);
+  Canvas.drawFrame(arr);
 };
 
 // button

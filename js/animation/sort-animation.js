@@ -1,8 +1,8 @@
+import { Canvas } from "../animation/canvas.js";
 import { calculateNextArr } from "../misc/helpers.js";
 
 export class SortAnimation {
-  constructor(canvas, arrStart, swaps, speed) {
-    this.canvas = canvas;
+  constructor(arrStart, swaps, speed) {
     this.arrStart = arrStart;
     this.swaps = swaps;
     this.speed = speed;
@@ -17,7 +17,7 @@ export class SortAnimation {
       clearInterval(this.interval);
       console.log("animation stopped");
     } else {
-      this.canvas.drawFrame(
+      Canvas.drawFrame(
         calculateNextArr(this.arrStart, this.swaps, this.index),
         this.swaps[this.index]
       );
