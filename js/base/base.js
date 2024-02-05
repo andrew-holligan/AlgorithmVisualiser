@@ -7,22 +7,22 @@ import {
   pickAlgorithm,
 } from "../misc/helpers.js";
 
-// globals
+// GLOBALS
 let animation;
 let arr;
 let swaps;
 let speed;
 
-// initial canvas
+// PAGE LOAD
 window.onload = function () {
+  // initialise globals and canvas
   animation = null;
   arr = generateArr(60);
   speed = mapSpeed(60, 20, 100, 500, 0);
   Canvas.drawFrame(arr);
 };
 
-// slider
-// controls number of elements in array
+// SIZE SLIDER
 let sliderSize = document.getElementById("input-slider-size");
 sliderSize.oninput = function () {
   arr = generateArr(sliderSize.value);
@@ -33,8 +33,7 @@ sliderSize.onchange = function () {
   Canvas.drawFrame(arr);
 };
 
-// slider
-// controls speed of animation
+// SPEED SLIDER
 let sliderSpeed = document.getElementById("input-slider-speed");
 sliderSpeed.oninput = function () {
   speed = mapSpeed(sliderSpeed.value, 20, 100, 500, 0);
@@ -65,8 +64,7 @@ sliderSpeed.onchange = function () {
   }
 };
 
-// button
-// controls randomising the array
+// RANDOMISE BUTTON
 let buttonRandomise = document.getElementById("input-button-randomise");
 buttonRandomise.onclick = function () {
   //garbage collection
@@ -88,8 +86,7 @@ buttonRandomise.onclick = function () {
   Canvas.drawFrame(arr);
 };
 
-// button
-// controls starting the sort animation
+// SORT BUTTON
 let buttonSort = document.getElementById("input-button-sort");
 buttonSort.onclick = function () {
   if (animation) {

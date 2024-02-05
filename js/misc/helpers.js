@@ -64,6 +64,10 @@ export function calculateNextArr(arr, swaps, index) {
   return arr;
 }
 
+// Description: returns swaps array after picking sorting algorithm
+// Input: location = name of html file
+//        arr
+// Output: swaps
 export function pickAlgorithm(location, arr) {
   let swaps;
   switch (location) {
