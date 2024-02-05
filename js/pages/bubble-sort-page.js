@@ -1,18 +1,20 @@
-import { Canvas } from "../canvas/canvas.js";
-import { generateArr, randomiseArr, mapSpeed } from "../helpers.js";
+import { Canvas } from "../animation/canvas.js";
+import { SortAnimation } from "../animation/sort-animation.js";
+import { generateArr, randomiseArr, mapSpeed } from "../misc/helpers.js";
 import { BubbleSort } from "../algorithms/bubble-sort.js";
 
 // globals
-const location = window.location.pathname.split("/").pop();
 const canvas = new Canvas();
-const bubbleSort = new BubbleSort(canvas);
-
+let animation;
 let arr;
+let swaps;
 let speed;
 
 // initial canvas
 window.onload = function () {
+  animation = null;
   arr = generateArr(60);
+  speed = mapSpeed(60, 20, 100, 500, 0);
   canvas.drawFrame(arr);
 };
 
@@ -21,12 +23,10 @@ window.onload = function () {
 let sliderSize = document.getElementById("input-slider-size");
 sliderSize.oninput = function () {
   arr = generateArr(sliderSize.value);
-  resetAnimation();
   canvas.drawFrame(arr);
 };
 sliderSize.onchange = function () {
   arr = generateArr(sliderSize.value);
-  resetAnimation();
   canvas.drawFrame(arr);
 };
 
@@ -35,20 +35,43 @@ sliderSize.onchange = function () {
 let sliderSpeed = document.getElementById("input-slider-speed");
 sliderSpeed.oninput = function () {
   speed = mapSpeed(sliderSpeed.value, 20, 100, 500, 0);
-  resetAnimation();
-  // canvas.drawFrame(arr);
+
+  // animate with new speed
+  if (animation && !animation.isStopped()) {
+    animation.stop();
+    animation.setSpeed(speed);
+    animation.start();
+  }
 };
 sliderSpeed.onchange = function () {
   speed = mapSpeed(sliderSpeed.value, 20, 100, 500, 0);
-  resetAnimation();
+
+  // animate with new speed
+  if (animation && !animation.isStopped()) {
+    animation.stop();
+    animation.setSpeed(speed);
+    animation.start();
+  }
 };
 
 // button
 // controls randomising the array
 let buttonRandomise = document.getElementById("input-button-randomise");
 buttonRandomise.onclick = function () {
+  //garbage collection
+  if (animation) {
+    animation.stop();
+    animation = null;
+  }
+
+  // generate new random arr and swaps
   arr = randomiseArr(arr);
-  resetAnimation();
+  swaps = BubbleSort.sort(arr);
+
+  // initialise new animation
+  animation = new SortAnimation(canvas, arr, swaps, speed);
+
+  console.log(arr);
   canvas.drawFrame(arr);
 };
 
@@ -56,12 +79,7 @@ buttonRandomise.onclick = function () {
 // controls starting the sort animation
 let buttonSort = document.getElementById("input-button-sort");
 buttonSort.onclick = function () {
-  resetAnimation();
-  bubbleSort.animate();
+  if (animation) {
+    animation.start();
+  }
 };
-
-function resetAnimation() {
-  bubbleSort.stop();
-  bubbleSort.setArr(arr);
-  bubbleSort.setSpeed(speed);
-}

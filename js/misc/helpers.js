@@ -18,21 +18,25 @@ export function randomiseArr(arr) {
   return arr;
 }
 
-// a godly piece of stack overflow
 // this maps a range to another range
 // example:
 // input range = [0, 254], output range = [500, 5500]
 // input = 0, output = 500
-export function mapSpeed(
-  input,
-  input_start,
-  input_end,
-  output_start,
-  output_end
-) {
+export function mapSpeed(input, inputStart, inputEnd, outputStart, outputEnd) {
   return (
-    output_start +
-    ((output_end - output_start) / (input_end - input_start)) *
-      (input - input_start)
+    outputStart +
+    ((outputEnd - outputStart) / (inputEnd - inputStart)) * (input - inputStart)
   );
+}
+
+export function calculateNextArr(array, swaps, index) {
+  let arr = [...array];
+  let i = 0;
+  while (i < index) {
+    let swapI = swaps[i][0];
+    let swapJ = swaps[i][1];
+    [arr[swapI], arr[swapJ]] = [arr[swapJ], arr[swapI]];
+    i++;
+  }
+  return arr;
 }
