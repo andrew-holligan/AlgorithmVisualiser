@@ -1,7 +1,11 @@
 import { Canvas } from "../animation/canvas.js";
 import { SortAnimation } from "../animation/sort-animation.js";
-import { generateArr, randomiseArr, mapSpeed } from "../misc/helpers.js";
-import { BubbleSort } from "../algorithms/bubble-sort.js";
+import {
+  generateArr,
+  randomiseArr,
+  mapSpeed,
+  pickAlgorithm,
+} from "../misc/helpers.js";
 
 // globals
 let animation;
@@ -73,10 +77,13 @@ buttonRandomise.onclick = function () {
 
   // generate new random arr and swaps
   arr = randomiseArr(arr);
-  swaps = BubbleSort.sort(arr);
+
+  // decide what sorting algorithm to use
+  let location = window.location.pathname.split("/").pop();
+  swaps = pickAlgorithm(location, arr);
 
   // initialise new animation
-  animation = new SortAnimation(canvas, arr, swaps, speed);
+  animation = new SortAnimation(arr, swaps, speed);
 
   Canvas.drawFrame(arr);
 };

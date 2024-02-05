@@ -1,3 +1,5 @@
+import { BubbleSort } from "../algorithms/bubble-sort.js";
+
 // Description: returns an ordered array up to n
 // Input: n
 // Output: [1, 2, 3, ..., n-1, n]
@@ -60,4 +62,14 @@ export function calculateNextArr(arr, swaps, index) {
   let swapJ = swaps[index][1];
   [arr[swapI], arr[swapJ]] = [arr[swapJ], arr[swapI]];
   return arr;
+}
+
+export function pickAlgorithm(location, arr) {
+  let swaps;
+  switch (location) {
+    case "bubble-sort.html":
+      swaps = BubbleSort.sort(arr);
+      break;
+  }
+  return swaps;
 }
