@@ -36,21 +36,29 @@ let sliderSpeed = document.getElementById("input-slider-speed");
 sliderSpeed.oninput = function () {
   speed = mapSpeed(sliderSpeed.value, 20, 100, 500, 0);
 
-  // animate with new speed
+  // animation is initialised and is running
   if (animation && !animation.isStopped()) {
     animation.stop();
     animation.setSpeed(speed);
     animation.start();
   }
+  // animation is initialised
+  else if (animation) {
+    animation.setSpeed(speed);
+  }
 };
 sliderSpeed.onchange = function () {
   speed = mapSpeed(sliderSpeed.value, 20, 100, 500, 0);
 
-  // animate with new speed
+  // animation is initialised and is running
   if (animation && !animation.isStopped()) {
     animation.stop();
     animation.setSpeed(speed);
     animation.start();
+  }
+  // animation is initialised
+  else if (animation) {
+    animation.setSpeed(speed);
   }
 };
 

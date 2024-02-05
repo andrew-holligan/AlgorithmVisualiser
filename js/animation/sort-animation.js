@@ -13,7 +13,7 @@ export class SortAnimation {
   }
 
   animate = () => {
-    if (this.index > this.count) {
+    if (this.index >= this.count) {
       clearInterval(this.interval);
       console.log("animation stopped");
     } else {
