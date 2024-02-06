@@ -1,11 +1,11 @@
-import { Canvas } from "../animation/canvas.js";
-import { SortAnimation } from "../animation/sort-animation.js";
+import { Canvas } from "./animation/canvas.js";
+import { SortAnimation } from "./animation/sort-animation.js";
 import {
   generateArr,
   randomiseArr,
   mapSpeed,
   pickAlgorithm,
-} from "../misc/helpers.js";
+} from "./misc/helpers.js";
 
 // GLOBALS
 let animation;
@@ -36,7 +36,7 @@ sliderSize.onchange = function () {
 // SPEED SLIDER
 let sliderSpeed = document.getElementById("input-slider-speed");
 sliderSpeed.oninput = function () {
-  speed = mapSpeed(sliderSpeed.value, 20, 100, 500, 0);
+  speed = mapSpeed(sliderSpeed.value, 20, 100, 100, 0);
 
   // animation is initialised and is running
   if (animation && !animation.isStopped()) {
@@ -50,7 +50,7 @@ sliderSpeed.oninput = function () {
   }
 };
 sliderSpeed.onchange = function () {
-  speed = mapSpeed(sliderSpeed.value, 20, 100, 500, 0);
+  speed = mapSpeed(sliderSpeed.value, 20, 100, 100, 0);
 
   // animation is initialised and is running
   if (animation && !animation.isStopped()) {
@@ -67,7 +67,6 @@ sliderSpeed.onchange = function () {
 // RANDOMISE BUTTON
 let buttonRandomise = document.getElementById("input-button-randomise");
 buttonRandomise.onclick = function () {
-  //garbage collection
   if (animation) {
     animation.stop();
     animation = null;
