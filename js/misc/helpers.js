@@ -33,7 +33,13 @@ export function randomiseArr(arr) {
 //          input range = [0, 254]
 //          output range = [500, 5500]
 //          returns 500
-export function mapSpeed(n, inputStart, inputEnd, outputStart, outputEnd) {
+export function mapValueToRange(
+  n,
+  inputStart,
+  inputEnd,
+  outputStart,
+  outputEnd
+) {
   return (
     outputStart +
     ((outputEnd - outputStart) / (inputEnd - inputStart)) * (n - inputStart)
@@ -76,4 +82,12 @@ export function pickAlgorithm(location, arr) {
       break;
   }
   return swaps;
+}
+
+export function delay(n) {
+  let start = (performance.now() + performance.timeOrigin) / 1000;
+  let end = (performance.now() + performance.timeOrigin) / 1000;
+  while (end - start < n) {
+    end = (performance.now() + performance.timeOrigin) / 1000;
+  }
 }

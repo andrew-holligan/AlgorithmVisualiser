@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./css/base/footer.css" />
 
     <link rel="stylesheet" href="./css/algorithm/animation.css" />
+    <link rel="stylesheet" href="./css/algorithm/code.css" />
 
     <!-- js -->
     <script type="module" src="./js/index.js"></script>
@@ -66,18 +67,18 @@
               <input
                 type="range"
                 width="300"
-                min="20"
-                max="100"
-                step="2"
+                min="1"
+                max="20"
+                step="1"
                 id="input-slider-size"
                 class="input-slider"
               />
               <input
                 type="range"
                 width="300"
-                min="20"
-                max="100"
-                step="2"
+                min="1"
+                max="20"
+                step="1"
                 id="input-slider-speed"
                 class="input-slider"
               />
@@ -92,14 +93,11 @@
         </div>
       </div>
 
-      <!-- TODO: this is terrible, ill fix css later -->
-      <div
-        class="main-section"
-        style="flex-direction: column; padding-bottom: 0px"
-      >
-        <h2 style="margin: 0px; color: #deacf5">Code</h2>
-        <pre style="margin: 0px">
-          <code class="language-javascript" style="border-radius: 20px;">
+      <div class="code-section">
+        <div class="code-implementation">
+          <h2>Code</h2>
+          <pre>
+            <code class="language-javascript">
 function bubbleSort(arr) {
   for (let i = arr.length - 1; i >= 0; i--) {
     for (let j = 0; j < i; j++) {
@@ -110,8 +108,19 @@ function bubbleSort(arr) {
   }
   return arr;
 }
-          </code>
-        </pre>
+            </code>
+          </pre>
+        </div>
+
+        <div class="code-complexities">
+          <h2>Complexities</h2>
+          <!-- complexities -->
+          <p>info about time/space complexities</p>
+          <ul>
+            <li>O(N)</li>
+            <li>etc</li>
+          </ul>
+        </div>
       </div>
     </main>
 
