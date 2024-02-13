@@ -1,38 +1,25 @@
-/* STANDARD */
-/* 1. position */
-/* 2. size */
-/* 3. margin/padding */
-/* 4. border */
-/* 5. color */
-/* 6. font */
-
-footer {
-  width: 100%;
-  height: 20px;
-
-  margin-top: 20px;
-  margin-bottom: 20px;
-
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: var(--width-global);
+  margin-top: 0.75rem;
   color: var(--color-2);
-
-  font-size: 16px;
   font-weight: bold;
 }
 
-.footer-link {
-  text-decoration: none;
-
-  color: var(--color-1);
-}
-
 .footer-left {
-  float: left;
-
-  padding-inline: 40px;
+  display: flex;
+  padding-inline: 1rem;
 }
 
 .footer-right {
   float: right;
+  padding-inline: 1rem;
+}
 
-  padding-inline: 40px;
+.footer-left a {
+  text-decoration: none;
+  color: var(--color-1);
 }

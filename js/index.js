@@ -18,18 +18,28 @@ window.onload = function () {
   // initialise globals and canvas
   animation = null;
   arr = generateArr(60);
-  speed = mapValueToRange(11, 1, 20, 0.0001, 0.001);
+  speed = mapValueToRange(11, 1, 20, 20, 1);
   Canvas.drawFrame(arr);
 };
 
 // SIZE SLIDER
 let sliderSize = document.getElementById("input-slider-size");
 sliderSize.oninput = function () {
+  if (animation) {
+    animation.stop();
+    animation = null;
+  }
+
   let size = mapValueToRange(sliderSize.value, 1, 20, 20, 100);
   arr = generateArr(size);
   Canvas.drawFrame(arr);
 };
 sliderSize.onchange = function () {
+  if (animation) {
+    animation.stop();
+    animation = null;
+  }
+
   let size = mapValueToRange(sliderSize.value, 1, 20, 20, 100);
   arr = generateArr(size);
   Canvas.drawFrame(arr);
@@ -38,7 +48,7 @@ sliderSize.onchange = function () {
 // SPEED SLIDER
 let sliderSpeed = document.getElementById("input-slider-speed");
 sliderSpeed.oninput = function () {
-  speed = mapValueToRange(sliderSpeed.value, 1, 20, 0.0001, 0.001);
+  speed = mapValueToRange(sliderSpeed.value, 1, 20, 20, 1);
 
   // animation is initialised and is running
   if (animation && !animation.isStopped()) {
@@ -52,7 +62,7 @@ sliderSpeed.oninput = function () {
   }
 };
 sliderSpeed.onchange = function () {
-  speed = mapValueToRange(sliderSpeed.value, 1, 20, 0.0001, 0.001);
+  speed = mapValueToRange(sliderSpeed.value, 1, 20, 20, 1);
 
   // animation is initialised and is running
   if (animation && !animation.isStopped()) {

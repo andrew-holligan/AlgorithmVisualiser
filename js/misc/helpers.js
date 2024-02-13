@@ -84,10 +84,10 @@ export function pickAlgorithm(location, arr) {
   return swaps;
 }
 
-export function delay(n) {
-  let start = (performance.now() + performance.timeOrigin) / 1000;
-  let end = (performance.now() + performance.timeOrigin) / 1000;
-  while (end - start < n) {
-    end = (performance.now() + performance.timeOrigin) / 1000;
-  }
-}
+// export function delay(n) {
+//   let start = (performance.now() + performance.timeOrigin) / 1000;
+//   let end = (performance.now() + performance.timeOrigin) / 1000;
+//   while (end - start < n) {
+//     end = (performance.now() + performance.timeOrigin) / 1000;
+//   }
+// }

@@ -1,9 +1,20 @@
-/* VARIABLES */
 :root {
   --color-1: #b300ff;
   --color-2: #deacf5;
   --color-3: #545454;
   --color-4: #2f2f2f;
+  --color-5: #8e8e8e;
 
   --font: Helvetica;
+
+  --width-global: 50rem;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  background: var(--color-4);
+  font-family: var(--font);
 }

@@ -1,20 +1,10 @@
-/* STANDARD */
-/* 1. position */
-/* 2. size */
-/* 3. margin/padding */
-/* 4. border */
-/* 5. color */
-/* 6. font */
-
 .canvas-inputs {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-
   width: 100%;
-
-  margin-top: 16px;
+  margin-top: 0.5em;
 }
 
 .canvas-slider-labels {

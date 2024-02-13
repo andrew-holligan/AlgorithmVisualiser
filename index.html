@@ -20,32 +20,38 @@
   </head>
 
   <body>
-    <header>
-      <div class="heading">
-        <h1>Algorithm Visualiser</h1>
-      </div>
+    <header class="header">
+      <h1>Algorithm Visualiser</h1>
     </header>
 
-    <nav>
-      <ul class="nav-list">
-        <li><a id="nav-active" href="index.html">Home</a></li>
-        <li><a href="bubble-sort.html">Bubble Sort</a></li>
-        <li><a href="">Insertion Sort</a></li>
-        <li><a href="">Selection Sort</a></li>
-        <li><a href="">Shell Sort</a></li>
-        <li><a href="">Merge Sort</a></li>
-        <li><a href="">Quick Sort</a></li>
-      </ul>
+    <nav class="navbar">
+      <a id="home-link" href="index.html">Home</a>
+      <div class="navbar-dropdown">
+        Stable Sorts
+        <div class="navbar-dropdown-menu">
+          <a href="bubble-sort.html">Bubble Sort</a>
+          <a href="">Insertion Sort</a>
+          <a href="">Merge Sort</a>
+        </div>
+      </div>
+      <div class="navbar-dropdown">
+        Unstable Sorts
+        <div class="navbar-dropdown-menu">
+          <a href="">Selection Sort</a>
+          <a href="">Shell Sort</a>
+          <a href="">Quick Sort</a>
+        </div>
+      </div>
     </nav>
 
-    <main>
+    <main class="main">
       <div class="main-section"></div>
       <div class="main-section"></div>
     </main>
 
-    <footer>
+    <footer class="footer">
       <div class="footer-left">
-        dev
+        dev:
         <a class="footer-link" href="https://github.com/andrew-holligan"
           >andrew-holligan</a
         >

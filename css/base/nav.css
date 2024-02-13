@@ -1,69 +1,71 @@
-/* STANDARD */
-/* 1. position */
-/* 2. size */
-/* 3. margin/padding */
-/* 4. border */
-/* 5. color */
-/* 6. font */
-
-nav {
+.navbar {
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.nav-list {
-  /* messing with centering */
-  all: unset;
-  list-style-type: none;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 20px;
-
-  height: 30px;
-  width: 1100px;
-
-  border-radius: 40px;
-
-  background: var(--color-2);
-}
-
-.nav-list li a {
-  text-decoration: none;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 10px;
-  margin-inline: 15px;
-
-  width: 100px;
-
-  border-radius: 20px;
-  border: 3px solid var(--color-2);
-
-  color: var(--color-2);
-  background: var(--color-1);
-
-  font-size: 14px;
+  justify-content: space-evenly;
   font-weight: bold;
+  width: var(--width-global);
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--color-1);
 }
 
-.nav-list li a:hover {
-  border: 3px solid var(--color-4);
-}
-
-/* page we are on */
-#nav-active {
-  pointer-events: none;
-  cursor: default;
-
-  border: 3px solid var(--color-2);
-
-  color: var(--color-1);
+.navbar a {
+  text-decoration: none;
+  text-align: center;
+  padding: 0.25rem;
+  width: 12.5rem;
+  color: var(--color-4);
   background: var(--color-2);
+  font-size: 1rem;
+}
+
+#home-link {
+  border-radius: 1rem;
+}
+
+#home-link:hover {
+  color: var(--color-2);
+  background: var(--color-4);
+}
+
+.navbar-dropdown {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.25rem;
+  width: 12.5rem;
+  border-radius: 1rem;
+  color: var(--color-4);
+  background: var(--color-2);
+  font-size: 1rem;
+}
+
+.navbar-dropdown:hover {
+  color: var(--color-2);
+  background: var(--color-4);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.navbar-dropdown-menu a:last-child {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.navbar-dropdown:hover .navbar-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 1.4rem;
+}
+
+.navbar-dropdown-menu {
+  display: none;
+}
+
+.navbar-dropdown-menu a:hover {
+  cursor: pointer;
+  color: var(--color-2);
+  background: var(--color-4);
 }
