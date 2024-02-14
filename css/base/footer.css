@@ -3,23 +3,27 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+
   width: var(--width-global);
   margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+
   color: var(--color-2);
   font-weight: bold;
 }
 
 .footer-left {
-  display: flex;
   padding-inline: 1rem;
 }
 
 .footer-right {
   float: right;
+
   padding-inline: 1rem;
 }
 
 .footer-left a {
   text-decoration: none;
+
   color: var(--color-1);
 }

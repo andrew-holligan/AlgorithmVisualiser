@@ -26,6 +26,7 @@
 
     <link rel="stylesheet" href="./css/algorithm/animation.css" />
     <link rel="stylesheet" href="./css/algorithm/code.css" />
+    <link rel="stylesheet" href="./css/algorithm/info.css" />
 
     <!-- js -->
     <script type="module" src="./js/index.js"></script>
@@ -36,6 +37,7 @@
       <h1>Bubble Sort</h1>
     </header>
 
+    <!-- NAVBAR -->
     <nav class="navbar">
       <a id="home-link" href="index.html">Home</a>
       <div class="navbar-dropdown">
@@ -57,51 +59,59 @@
     </nav>
 
     <main class="main">
-      <div class="main-section">
-        <!-- this is bad but it works -->
-        <div>
-          <div class="canvas">
-            <canvas id="canvas" width="800" height="240"></canvas>
-          </div>
+      <!-- SORTING ANIMATION -->
+      <div class="animation-section">
+        <canvas id="canvas" width="760" height="240"></canvas>
 
-          <div class="canvas-inputs">
-            <div class="canvas-slider-labels">
-              <p>Size:</p>
-              <p>Speed:</p>
-            </div>
-            <div class="canvas-inputs-slider">
-              <input
-                type="range"
-                width="300"
-                min="1"
-                max="20"
-                step="1"
-                id="input-slider-size"
-                class="input-slider"
-              />
-              <input
-                type="range"
-                width="300"
-                min="1"
-                max="20"
-                step="1"
-                id="input-slider-speed"
-                class="input-slider"
-              />
-            </div>
-            <div class="canvas-inputs-buttons">
-              <button class="input-button" id="input-button-randomise">
-                Randomise
-              </button>
-              <button class="input-button" id="input-button-sort">Sort</button>
-            </div>
-          </div>
+        <div class="canvas-sliders">
+          Size
+          <input
+            type="range"
+            width="300"
+            min="1"
+            max="20"
+            step="1"
+            id="input-slider-size"
+            class="canvas-slider"
+          />
+        </div>
+
+        <div class="canvas-sliders">
+          Speed
+          <input
+            type="range"
+            width="300"
+            min="1"
+            max="20"
+            step="1"
+            id="input-slider-speed"
+            class="canvas-slider"
+          />
+        </div>
+
+        <div class="canvas-buttons">
+          <button class="canvas-button" id="input-button-randomise">
+            Randomise
+          </button>
+          <button class="canvas-button" id="input-button-sort">Sort</button>
         </div>
       </div>
 
-      <div class="main-section"></div>
+      <!-- SORTING DESCRIPTION -->
+      <div class="info-section">
+        <div class="complexities">
+          <h3>Complexities</h3>
+          <h5>Time Complexity</h5>
+          <li>Best Case: O(n<sup>2</sup>)</li>
+          <li>Worst Case: O(n<sup>2</sup>)</li>
+          <li>Average Case: O(n<sup>2</sup>)</li>
+          <h5>Space Complexity</h5>
+          <li>O(1)</li>
+        </div>
+      </div>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-left">
         dev:

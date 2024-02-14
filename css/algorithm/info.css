@@ -1,0 +1,26 @@
+.info-section {
+  padding: 1rem;
+  width: 100%;
+  margin-top: 0.75rem;
+
+  border-radius: 1rem;
+
+  background: var(--color-3);
+  color: var(--color-4);
+}
+
+.complexities {
+  display: inline;
+  text-align: center;
+  float: right;
+
+  padding: 0.5rem;
+
+  border-radius: 0.5rem;
+
+  background: var(--color-2);
+}
+
+.complexities li {
+  list-style-type: none;
+}

@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   width: var(--width-global);
 }
 
@@ -10,9 +11,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 1rem;
   width: 100%;
   margin-top: 0.75rem;
+
   border-radius: 1rem;
+
   background: var(--color-3);
 }

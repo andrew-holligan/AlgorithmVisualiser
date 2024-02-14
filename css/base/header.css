@@ -2,8 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-2);
+
   margin: 0.75rem;
+
+  color: var(--color-2);
 }
 
 .header h1 {
