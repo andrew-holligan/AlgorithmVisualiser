@@ -6,12 +6,16 @@ import {
   mapValueToRange,
   pickAlgorithm,
 } from "./misc/helpers.js";
+import { pageData } from "./misc/page-data.js";
 
 // GLOBALS
 let animation;
 let arr;
 let swaps;
 let speed;
+
+let location = window.location.pathname.split("/").pop();
+let codeDisplay = document.getElementById("code-display");
 
 // PAGE LOAD
 window.onload = function () {
@@ -103,4 +107,41 @@ buttonSort.onclick = function () {
   if (animation) {
     animation.start();
   }
+};
+
+// IMPLEMENTATION DISPLAY BUTTONS
+let buttonJavascript = document.getElementById("code-button-javascript");
+buttonJavascript.onclick = function () {
+  let code = pageData.get(location).get("javascript");
+  codeDisplay.innerText = code;
+};
+
+let buttonJava = document.getElementById("code-button-java");
+buttonJava.onclick = function () {
+  let code = pageData.get(location).get("java");
+  codeDisplay.innerText = code;
+};
+
+let buttonPython = document.getElementById("code-button-python");
+buttonPython.onclick = function () {
+  let code = pageData.get(location).get("python");
+  codeDisplay.innerText = code;
+};
+
+let buttonCPP = document.getElementById("code-button-cpp");
+buttonCPP.onclick = function () {
+  let code = pageData.get(location).get("cpp");
+  codeDisplay.innerText = code;
+};
+
+let buttonCSharp = document.getElementById("code-button-csharp");
+buttonCSharp.onclick = function () {
+  let code = pageData.get(location).get("csharp");
+  codeDisplay.innerText = code;
+};
+
+let buttonC = document.getElementById("code-button-c");
+buttonC.onclick = function () {
+  let code = pageData.get(location).get("c");
+  codeDisplay.innerText = code;
 };

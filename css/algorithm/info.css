@@ -11,6 +11,7 @@
 
 .info-section p {
   font-weight: bold;
+  color: var(--color-5);
 }
 
 .complexities {

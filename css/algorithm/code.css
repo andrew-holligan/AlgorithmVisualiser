@@ -1,22 +1,96 @@
+/* GLOBAL */
+.code-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
+  padding: 1rem;
+  width: 100%;
+  margin-top: 0.75rem;
 
-/* <div class="code-section">
-        <div class="code-implementation">
-          <h2>Code</h2>
-          <pre>
-            <code class="language-javascript">
-function bubbleSort(arr) {
-  for (let i = arr.length - 1; i >= 0; i--) {
-    for (let j = 0; j < i; j++) {
-      if (arr[j] > arr[j + 1]) {
-        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-      }
-    }
-  }
-  return arr;
+  border-radius: 1rem;
+
+  background: var(--color-3);
+  color: var(--color-2);
 }
-            </code>
-          </pre>
-        </div>
 
-  
+/* HEADING */
+.code-section h2 {
+  margin: 0;
+
+  text-align: center;
+}
+
+/* BUTTONS */
+.code-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.code-buttons button {
+  width: 16%;
+  height: 3rem;
+
+  border: 0;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--color-5);
+}
+
+.code-buttons button:first-child {
+  border-top-left-radius: 1rem;
+}
+
+.code-buttons button:last-child {
+  border-top-right-radius: 1rem;
+}
+
+.code-buttons button:hover {
+  cursor: pointer;
+}
+
+/* code images */
+#code-button-javascript {
+  background-image: url("../../assets/images/languages/icons8-javascript-48.png");
+}
+#code-button-java {
+  background-image: url("../../assets/images/languages/icons8-java-48.png");
+}
+#code-button-python {
+  background-image: url("../../assets/images/languages/icons8-python-48.png");
+}
+#code-button-c {
+  background-image: url("../../assets/images/languages/icons8-c-48.png");
+}
+#code-button-cpp {
+  background-image: url("../../assets/images/languages/icons8-c++-48.png");
+}
+#code-button-csharp {
+  background-image: url("../../assets/images/languages/icons8-csharp-48.png");
+}
+
+/* DISPAY IMPLEMENTATION */
+pre {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+
+  background: var(--color-5);
+  color: var(--color-4);
+}
+code {
+  padding: 2rem !important;
+
+  background: var(--color-5) !important;
+}

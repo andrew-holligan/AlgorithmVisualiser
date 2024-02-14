@@ -2,18 +2,23 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  font-weight: bold;
+
   width: var(--width-global);
   padding: 1rem;
+
   border-radius: 1rem;
+
   background: var(--color-1);
+  font-weight: bold;
 }
 
 .navbar a {
   text-decoration: none;
   text-align: center;
+
   padding: 0.25rem;
   width: 12.5rem;
+
   color: var(--color-4);
   background: var(--color-2);
   font-size: 1rem;
