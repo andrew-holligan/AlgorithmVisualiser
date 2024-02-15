@@ -27,3 +27,9 @@
 
   color: var(--color-1);
 }
+
+/* SUB FOOTER */
+.sub-footer {
+  color: var(--color-5);
+  font-size: 0.75rem;
+}

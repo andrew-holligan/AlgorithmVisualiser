@@ -7,7 +7,7 @@ import {
   pickAlgorithm,
   setActiveCodeButton,
 } from "./misc/helpers.js";
-import { pageData } from "./misc/page-data.js";
+import { pageData } from "./page-content/page-data.js";
 
 // GLOBALS
 let animation;

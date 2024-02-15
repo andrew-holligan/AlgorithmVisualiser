@@ -1,4 +1,5 @@
-const bubbleSortData = new Map();
+export const bubbleSortData = new Map();
+
 bubbleSortData.set(
   "javascript",
   `function bubbleSort(arr) {
@@ -12,6 +13,7 @@ bubbleSortData.set(
     return arr;
 }`
 );
+
 bubbleSortData.set(
   "java",
   `public static int[] bubbleSort(int[] arr) {
@@ -27,6 +29,7 @@ bubbleSortData.set(
     return arr;
 }`
 );
+
 bubbleSortData.set(
   "python",
   `def bubble_sort(arr):
@@ -37,5 +40,6 @@ bubbleSortData.set(
     return arr`
 );
 
-export const pageData = new Map();
-pageData.set("bubble-sort.html", bubbleSortData);
+bubbleSortData.set("cpp", `STILL TO IMPLEMENT`);
+bubbleSortData.set("csharp", `STILL TO IMPLEMENT`);
+bubbleSortData.set("c", `STILL TO IMPLEMENT`);
