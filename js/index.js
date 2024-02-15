@@ -5,6 +5,7 @@ import {
   randomiseArr,
   mapValueToRange,
   pickAlgorithm,
+  setActiveCodeButton,
 } from "./misc/helpers.js";
 import { pageData } from "./misc/page-data.js";
 
@@ -16,6 +17,7 @@ let speed;
 
 let location = window.location.pathname.split("/").pop();
 let codeDisplay = document.getElementById("code-display");
+const codeButtonNames = ["javascript", "java", "python", "cpp", "csharp", "c"];
 
 // PAGE LOAD
 window.onload = function () {
@@ -24,6 +26,10 @@ window.onload = function () {
   arr = generateArr(60);
   speed = mapValueToRange(11, 1, 20, 20, 1);
   Canvas.drawFrame(arr);
+
+  // initalise implementation display
+  codeDisplay.innerText = pageData.get(location).get("javascript");
+  setActiveCodeButton("javascript", codeButtonNames);
 };
 
 // SIZE SLIDER
@@ -92,7 +98,6 @@ buttonRandomise.onclick = function () {
   arr = randomiseArr(arr);
 
   // decide what sorting algorithm to use
-  let location = window.location.pathname.split("/").pop();
   swaps = pickAlgorithm(location, arr);
 
   // initialise new animation
@@ -110,38 +115,10 @@ buttonSort.onclick = function () {
 };
 
 // IMPLEMENTATION DISPLAY BUTTONS
-let buttonJavascript = document.getElementById("code-button-javascript");
-buttonJavascript.onclick = function () {
-  let code = pageData.get(location).get("javascript");
-  codeDisplay.innerText = code;
-};
-
-let buttonJava = document.getElementById("code-button-java");
-buttonJava.onclick = function () {
-  let code = pageData.get(location).get("java");
-  codeDisplay.innerText = code;
-};
-
-let buttonPython = document.getElementById("code-button-python");
-buttonPython.onclick = function () {
-  let code = pageData.get(location).get("python");
-  codeDisplay.innerText = code;
-};
-
-let buttonCPP = document.getElementById("code-button-cpp");
-buttonCPP.onclick = function () {
-  let code = pageData.get(location).get("cpp");
-  codeDisplay.innerText = code;
-};
-
-let buttonCSharp = document.getElementById("code-button-csharp");
-buttonCSharp.onclick = function () {
-  let code = pageData.get(location).get("csharp");
-  codeDisplay.innerText = code;
-};
-
-let buttonC = document.getElementById("code-button-c");
-buttonC.onclick = function () {
-  let code = pageData.get(location).get("c");
-  codeDisplay.innerText = code;
-};
+codeButtonNames.forEach((name) => {
+  let codeButton = document.getElementById("code-button-" + name);
+  codeButton.onclick = function () {
+    codeDisplay.innerText = pageData.get(location).get(name);
+    setActiveCodeButton(name, codeButtonNames);
+  };
+});

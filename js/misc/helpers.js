@@ -91,3 +91,11 @@ export function pickAlgorithm(location, arr) {
 //     end = (performance.now() + performance.timeOrigin) / 1000;
 //   }
 // }
+
+export function setActiveCodeButton(name, buttonNames) {
+  for (let i = 0; i < buttonNames.length; i++) {
+    document.getElementById("code-button-" + buttonNames[i]).className = "";
+  }
+  document.getElementById("code-button-" + name).className =
+    "code-buttons-activated";
+}

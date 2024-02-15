@@ -40,7 +40,19 @@
 
   background-repeat: no-repeat;
   background-position: center;
-  background-color: var(--color-5);
+  background-color: var(--color-2);
+}
+
+.code-buttons button:hover {
+  background-color: var(--color-4);
+}
+
+/* activated button */
+.code-buttons-activated {
+  pointer-events: none;
+  cursor: default;
+
+  background-color: var(--color-5) !important;
 }
 
 .code-buttons button:first-child {
