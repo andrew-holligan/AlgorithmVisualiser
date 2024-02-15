@@ -1,4 +1,6 @@
-export class BubbleSort {
+import { Sort } from "./sort.js";
+
+export class BubbleSort extends Sort {
   static sort(array) {
     let arr = [...array];
     let swaps = [];

@@ -1,5 +1,3 @@
-import { BubbleSort } from "../algorithms/bubble-sort.js";
-
 // Description: returns an ordered array up to n
 // Input: n
 // Output: [1, 2, 3, ..., n-1, n]
@@ -70,20 +68,6 @@ export function calculateNextArr(arr, swaps, index) {
   return arr;
 }
 
-// Description: returns swaps array after picking sorting algorithm
-// Input: location = name of html file
-//        arr
-// Output: swaps
-export function pickAlgorithm(location, arr) {
-  let swaps;
-  switch (location) {
-    case "bubble-sort.html":
-      swaps = BubbleSort.sort(arr);
-      break;
-  }
-  return swaps;
-}
-
 // export function delay(n) {
 //   let start = (performance.now() + performance.timeOrigin) / 1000;
 //   let end = (performance.now() + performance.timeOrigin) / 1000;
@@ -91,11 +75,3 @@ export function pickAlgorithm(location, arr) {
 //     end = (performance.now() + performance.timeOrigin) / 1000;
 //   }
 // }
-
-export function setActiveCodeButton(name, buttonNames) {
-  for (let i = 0; i < buttonNames.length; i++) {
-    document.getElementById("code-button-" + buttonNames[i]).className = "";
-  }
-  document.getElementById("code-button-" + name).className =
-    "code-buttons-activated";
-}

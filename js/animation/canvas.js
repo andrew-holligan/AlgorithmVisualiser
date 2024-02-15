@@ -8,7 +8,7 @@ export class Canvas {
     let width = xDimension / arr.length;
     let heightChunk = yDimension / arr.length;
 
-    window.requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
       // clear frame
       context.clearRect(0, 0, xDimension, yDimension);
 
