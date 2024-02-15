@@ -32,18 +32,22 @@
   margin-top: 1rem;
 }
 
-.code-buttons button {
+.code-button {
   width: 16%;
   height: 3rem;
 
   border: 0;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--color-2);
 }
 
-.code-buttons button:hover {
+.code-button:hover {
+  cursor: pointer;
+
   background-color: var(--color-4);
 }
 
@@ -53,18 +57,6 @@
   cursor: default;
 
   background-color: var(--color-5) !important;
-}
-
-.code-buttons button:first-child {
-  border-top-left-radius: 1rem;
-}
-
-.code-buttons button:last-child {
-  border-top-right-radius: 1rem;
-}
-
-.code-buttons button:hover {
-  cursor: pointer;
 }
 
 /* code images */
@@ -101,6 +93,7 @@ pre {
   background: var(--color-5);
   color: var(--color-4);
 }
+
 code {
   padding: 2rem !important;
 
