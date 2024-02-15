@@ -14,9 +14,17 @@
   font-weight: bold;
 }
 
-.overview-section p {
-  margin: 1rem;
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 30%;
+  margin-inline: 2rem;
+}
+
+.overview-container p {
+  text-align: center;
 }
 
 .welcome-section {
