@@ -10,7 +10,6 @@
 }
 
 .info-section p {
-  font-weight: bold;
   color: var(--color-5);
 }
 
@@ -22,6 +21,8 @@
   float: right;
 
   padding: 0.5rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
 
   border-radius: 0.5rem;
 
