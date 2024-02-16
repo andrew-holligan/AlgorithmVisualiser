@@ -19,20 +19,20 @@
   padding: 0.25rem;
   width: 12.5rem;
 
+  border-radius: 1rem;
+
   color: var(--color-4);
   background: var(--color-2);
-  font-size: 1rem;
 }
 
-#home-link {
-  border-radius: 1rem;
-}
+.navbar a:hover {
+  cursor: pointer;
 
-#home-link:hover {
   color: var(--color-2);
   background: var(--color-4);
 }
 
+/* DROPDOWN MENU */
 .navbar-dropdown {
   text-decoration: none;
 
@@ -43,19 +43,28 @@
   padding: 0.25rem;
   width: 12.5rem;
 
-  border-radius: 1rem;
-
-  color: var(--color-4);
-  background: var(--color-2);
-  font-size: 1rem;
-}
-
-.navbar-dropdown:hover {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-
   color: var(--color-2);
   background: var(--color-4);
+}
+
+.navbar-dropdown:hover .navbar-dropdown-menu {
+  max-height: 100%;
+  transition: max-height 0.5s ease-in;
+}
+
+.navbar-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+
+  margin-top: 1.5rem;
+}
+
+.navbar-dropdown-menu a {
+  border-radius: 0;
 }
 
 .navbar-dropdown-menu a:last-child {
@@ -63,21 +72,14 @@
   border-bottom-right-radius: 1rem;
 }
 
-.navbar-dropdown:hover .navbar-dropdown-menu {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-
-  margin-top: 1.4rem;
+/* ACTIVE LINK */
+.navbar-active-link {
+  opacity: 75%;
 }
 
-.navbar-dropdown-menu {
-  display: none;
-}
+.navbar-active-link:hover {
+  cursor: default !important;
 
-.navbar-dropdown-menu a:hover {
-  cursor: pointer;
-
-  color: var(--color-2);
-  background: var(--color-4);
+  background: var(--color-2) !important;
+  color: var(--color-4) !important;
 }
