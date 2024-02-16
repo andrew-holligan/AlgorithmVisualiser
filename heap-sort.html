@@ -12,7 +12,7 @@
       href="./assets/images/favicon/favicon.ico"
     />
 
-    <title>Sorting Visualised - Selection Sort</title>
+    <title>Sorting Visualised - Heap Sort</title>
 
     <!-- css -->
     <link rel="stylesheet" href="./css/base/variables.css" />
@@ -26,12 +26,12 @@
     <link rel="stylesheet" href="./css/algorithm/info.css" />
 
     <!-- js -->
-    <script type="module" src="./js/page/selection-sort-page.js"></script>
+    <script type="module" src="./js/page/heap-sort-page.js"></script>
   </head>
 
   <body>
     <header class="header">
-      <h1>Selection Sort</h1>
+      <h1>Heap Sort</h1>
     </header>
 
     <!-- NAVBAR -->
@@ -48,12 +48,10 @@
       <div class="navbar-dropdown">
         Unstable Sorts
         <div class="navbar-dropdown-menu">
-          <a class="navbar-active-link" href="./selection-sort.html"
-            >Selection Sort</a
-          >
+          <a href="./selection-sort.html">Selection Sort</a>
           <a href="./shell-sort.html">Shell Sort</a>
           <a href="./quick-sort.html">Quick Sort</a>
-          <a href="./heap-sort.html">Heap Sort</a>
+          <a class="navbar-active-link" href="./heap-sort.html">Heap Sort</a>
         </div>
       </div>
     </nav>
@@ -110,14 +108,14 @@
               <li>Average Case:</li>
             </ul>
             <ul class="complexities-cases-values">
-              <li>O(n<sup>2</sup>)</li>
-              <li>O(n<sup>2</sup>)</li>
-              <li>O(n<sup>2</sup>)</li>
+              <li>O(nlogn)</li>
+              <li>O(nlogn)</li>
+              <li>O(nlogn)</li>
             </ul>
           </div>
           <h5>Space</h5>
           <ul>
-            <li>O(1)</li>
+            <li>O(n)</li>
           </ul>
         </div>
         <!-- CONTENT -->
