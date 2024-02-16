@@ -27,6 +27,47 @@ export class AlgorithmPage {
       MIN_SLIDER_VALUE
     );
 
+    this.init();
+  }
+
+  init() {
+    // init page's events
+    let sliderSize = document.getElementById("input-slider-size");
+    sliderSize.oninput = () => {
+      this.sliderSizeEvent(sliderSize.value);
+    };
+    sliderSize.onchange = () => {
+      this.sliderSizeEvent(sliderSize.value);
+    };
+
+    let sliderSpeed = document.getElementById("input-slider-speed");
+    sliderSpeed.oninput = () => {
+      this.sliderSpeedEvent(sliderSpeed.value);
+    };
+    sliderSpeed.onchange = () => {
+      this.sliderSpeedEvent(sliderSpeed.value);
+    };
+
+    let buttonRandomise = document.getElementById("input-button-randomise");
+    buttonRandomise.onclick = () => {
+      this.buttonRandomiseEvent();
+    };
+
+    let buttonSort = document.getElementById("input-button-sort");
+    buttonSort.onclick = () => {
+      this.buttonSortEvent();
+    };
+
+    let buttonsCodeDisplay = Array.from(
+      document.getElementsByClassName("code-button")
+    );
+    buttonsCodeDisplay.forEach((button) => {
+      button.onclick = () => {
+        let languageName = button.id.split("-").pop();
+        this.updateCodeDisplay(languageName);
+      };
+    });
+
     // init page's visuals
     Canvas.drawFrame(this.arr);
     this.updateCodeDisplay("javascript");
