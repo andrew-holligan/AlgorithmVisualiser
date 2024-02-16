@@ -64,9 +64,17 @@
 
   border-radius: 1rem;
 
+  opacity: 50%;
+  transition: opacity 0.25s ease-in-out;
+
   background: var(--color-2);
   font-weight: bold;
   color: var(--color-4);
+}
+
+.canvas-sliders:hover {
+  opacity: 100%;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .canvas-slider {
