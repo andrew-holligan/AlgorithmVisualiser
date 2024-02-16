@@ -12,7 +12,7 @@
       href="./assets/images/favicon/favicon.ico"
     />
 
-    <title>Sorting Visualised - Quick Sort</title>
+    <title>Sorting Visualised - Shell Sort</title>
 
     <!-- css -->
     <link rel="stylesheet" href="./css/base/variables.css" />
@@ -26,12 +26,12 @@
     <link rel="stylesheet" href="./css/algorithm/info.css" />
 
     <!-- js -->
-    <script type="module" src="./js/page/quick-sort-page.js"></script>
+    <script type="module" src="./js/page/shell-sort-page.js"></script>
   </head>
 
   <body>
     <header class="header">
-      <h1>Quick Sort</h1>
+      <h1>Shell Sort</h1>
     </header>
 
     <!-- NAVBAR -->
@@ -49,8 +49,8 @@
         Unstable Sorts
         <div class="navbar-dropdown-menu">
           <a href="./selection-sort.html">Selection Sort</a>
-          <a href="./shell-sort.html">Shell Sort</a>
-          <a class="navbar-active-link" href="./quick-sort.html">Quick Sort</a>
+          <a class="navbar-active-link" href="./shell-sort.html">Shell Sort</a>
+          <a href="./quick-sort.html">Quick Sort</a>
         </div>
       </div>
     </nav>
@@ -109,12 +109,12 @@
             <ul class="complexities-cases-values">
               <li>O(nlogn)</li>
               <li>O(n<sup>2</sup>)</li>
-              <li>O(nlogn)</li>
+              <li>O(nlogn<sup>2</sup>)</li>
             </ul>
           </div>
           <h5>Space</h5>
           <ul>
-            <li>O(n)</li>
+            <li>O(1)</li>
           </ul>
         </div>
         <!-- CONTENT -->
