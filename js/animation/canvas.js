@@ -1,3 +1,10 @@
+const COLOR_PRIMARY = getComputedStyle(document.body).getPropertyValue(
+  "--color-1"
+);
+const COLOR_SECONDARY = getComputedStyle(document.body).getPropertyValue(
+  "--color-2"
+);
+
 export class Canvas {
   static drawFrame(arr, colourIndices = []) {
     let canvas = document.getElementById("canvas");
@@ -16,9 +23,9 @@ export class Canvas {
       for (let i = 0; i < arr.length; i++) {
         // colour the swapped elements
         if (colourIndices.includes(i)) {
-          colour = "#b300ff";
+          colour = COLOR_SECONDARY;
         } else {
-          colour = "#deacf5";
+          colour = COLOR_PRIMARY;
         }
 
         Canvas.#drawRect(
