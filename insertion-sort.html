@@ -12,7 +12,7 @@
       href="./assets/images/favicon/favicon.ico"
     />
 
-    <title>Sorting Visualised - Bubble Sort</title>
+    <title>Sorting Visualised - Insertion Sort</title>
 
     <!-- css -->
     <link rel="stylesheet" href="./css/base/variables.css" />
@@ -26,12 +26,12 @@
     <link rel="stylesheet" href="./css/algorithm/info.css" />
 
     <!-- js -->
-    <script type="module" src="./js/page/bubble-sort-page.js"></script>
+    <script type="module" src="./js/page/insertion-sort-page.js"></script>
   </head>
 
   <body>
     <header class="header">
-      <h1>Bubble Sort</h1>
+      <h1>Insertion Sort</h1>
     </header>
 
     <!-- NAVBAR -->
@@ -40,10 +40,10 @@
       <div class="navbar-dropdown">
         Stable Sorts
         <div class="navbar-dropdown-menu">
-          <a class="navbar-active-link" href="./bubble-sort.html"
-            >Bubble Sort</a
+          <a href="./bubble-sort.html">Bubble Sort</a>
+          <a class="navbar-active-link" href="./insertion-sort.html"
+            >Insertion Sort</a
           >
-          <a href="./insertion-sort.html">Insertion Sort</a>
           <a href="">Merge Sort</a>
         </div>
       </div>
@@ -105,12 +105,10 @@
           <div class="complexities-time">
             <ul class="complexities-cases">
               <li>Best Case:</li>
-              <li>Best Case (Early Exit):</li>
               <li>Worst Case:</li>
               <li>Average Case:</li>
             </ul>
             <ul class="complexities-cases-values">
-              <li>O(n<sup>2</sup>)</li>
               <li>O(n)</li>
               <li>O(n<sup>2</sup>)</li>
               <li>O(n<sup>2</sup>)</li>
@@ -123,28 +121,10 @@
         </div>
         <!-- CONTENT -->
         <h2>Overview</h2>
-        <p>
-          Bubble Sort works by swapping the largest element to the end of the
-          array in each outer iteration.
-        </p>
-        <p>
-          The inner loop is used to accomplish this. It works by iterating
-          through each element and swapping if a previous element is greater
-          than it's current.
-        </p>
-        <p>
-          Since we know the current largest element will be correctly in it's
-          place at the end of the array, our inner loop only needs to iterate up
-          to this element.
-        </p>
+        <p></p>
         <h2>Optimisations</h2>
-        <h3>Early Exit</h3>
-        <p>
-          This works by including a flag which is set whenever a swap occurs
-          inside our inner loop. If we finish our inner loop and the flag has
-          not been set (no swap occured), then the array must be sorted so just
-          exit the outer loop.
-        </p>
+        <h3></h3>
+        <p></p>
       </div>
 
       <!-- IMPLEMENTATION CODE -->

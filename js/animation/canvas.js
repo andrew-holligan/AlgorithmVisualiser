@@ -6,7 +6,7 @@ const COLOR_SECONDARY = getComputedStyle(document.body).getPropertyValue(
 );
 
 export class Canvas {
-  static drawFrame(arr, colourIndices = []) {
+  static drawFrame(arr, colourIndex = null) {
     let canvas = document.getElementById("canvas");
     let context = canvas.getContext("2d");
     let xDimension = canvas.getAttribute("width");
@@ -22,7 +22,7 @@ export class Canvas {
       let colour;
       for (let i = 0; i < arr.length; i++) {
         // colour the swapped elements
-        if (colourIndices.includes(i)) {
+        if (colourIndex == i) {
           colour = COLOR_SECONDARY;
         } else {
           colour = COLOR_PRIMARY;

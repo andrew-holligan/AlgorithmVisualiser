@@ -1,14 +1,13 @@
 import { Canvas } from "../animation/canvas.js";
-import { calculateNextArr } from "../misc/helpers.js";
 
 export class SortAnimation {
-  constructor(arrStart, swaps, speed) {
-    this.arrStart = arrStart;
-    this.swaps = swaps;
+  constructor(arrStart, moves, speed) {
+    this.arr = arrStart;
+    this.moves = moves;
     this.speed = speed;
 
     this.interval = null;
-    this.count = this.swaps.length;
+    this.count = this.moves.length;
     this.index = 0;
   }
 
@@ -17,10 +16,12 @@ export class SortAnimation {
       clearInterval(this.interval);
       console.log("animation stopped");
     } else {
-      Canvas.drawFrame(
-        calculateNextArr(this.arrStart, this.swaps, this.index),
-        this.swaps[this.index]
-      );
+      // get next screenshot of the array
+      let i = this.moves[this.index][0];
+      let value = this.moves[this.index][1];
+      this.arr[i] = value;
+
+      Canvas.drawFrame(this.arr, i);
       this.index++;
     }
   };

@@ -44,30 +44,6 @@ export function mapValueToRange(
   );
 }
 
-// export function calculateNextArr(array, swaps, index) {
-//   let arr = [...array];
-//   let i = 0;
-//   while (i < index) {
-//     let swapI = swaps[i][0];
-//     let swapJ = swaps[i][1];
-//     [arr[swapI], arr[swapJ]] = [arr[swapJ], arr[swapI]];
-//     i++;
-//   }
-//   return arr;
-// }
-
-// Description: returns the array after swapping the required swaps
-// Input: arr = array at index point in time
-//        swaps = array containing swap index pairs
-//        index = point in time we need array to be swapped to
-// Output: arr (swapped)
-export function calculateNextArr(arr, swaps, index) {
-  let swapI = swaps[index][0];
-  let swapJ = swaps[index][1];
-  [arr[swapI], arr[swapJ]] = [arr[swapJ], arr[swapI]];
-  return arr;
-}
-
 // export function delay(n) {
 //   let start = (performance.now() + performance.timeOrigin) / 1000;
 //   let end = (performance.now() + performance.timeOrigin) / 1000;
