@@ -1,4 +1,10 @@
-﻿# AlgorithmVisualiser
+﻿# SortingVisualised
+
+## Build
+
+[SortingVisualised](https://sortingvisualised.netlify.app/)
+
+Build on Netlify.
 
 ## Aim
 
@@ -15,7 +21,7 @@ Sorting Algorithms will be categorised under:
 
 A short description of the sorting algorithm with it's complexity.
 
-Multiple language implementation of the sorting algorithm.
+Implementations of the sorting algorithm in multiple programming languages.
 
 ## Contributing
 
