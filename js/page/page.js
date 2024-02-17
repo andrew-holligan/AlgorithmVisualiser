@@ -69,9 +69,17 @@ export class AlgorithmPage {
     });
 
     // init page's visuals
-    Canvas.drawFrame(this.arr);
+    this.resize();
+    addEventListener("resize", this.resize, false);
     this.updateCodeDisplay("javascript");
   }
+
+  resize = () => {
+    let canvas = document.getElementById("canvas");
+    canvas.width = canvas.parentElement.clientWidth - "32";
+    canvas.height = canvas.width / 3;
+    Canvas.drawFrame(this.arr);
+  };
 
   updateCodeDisplay(languageName) {
     // update code display

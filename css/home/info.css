@@ -38,7 +38,7 @@
   display: flex;
   justify-content: space-between;
 
-  width: 104%;
+  width: calc(100% + 2rem);
   margin-top: 0.75rem;
 
   color: var(--color-2);
@@ -55,7 +55,7 @@
   flex-direction: column;
   align-items: center;
 
-  width: 45.25%;
+  width: calc(49% - 2rem);
   padding: 1rem;
   border-radius: 1rem;
 
@@ -65,4 +65,23 @@
 .welcome-container h3 {
   margin: 0;
   margin-bottom: 0.5rem;
+}
+
+@media (max-width: 540px) {
+  .overview-section {
+    flex-direction: column;
+  }
+
+  .overview-container {
+    margin-inline: 0;
+  }
+
+  .welcome-section {
+    flex-direction: column;
+  }
+
+  .welcome-container {
+    width: calc(100% - 2rem);
+    margin-top: 0.75rem;
+  }
 }

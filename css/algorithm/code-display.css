@@ -95,7 +95,8 @@ pre {
 }
 
 code {
-  padding: 2rem !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
 
   background: var(--color-5) !important;
 }

@@ -18,3 +18,9 @@ body {
   background: var(--color-4);
   font-family: var(--font);
 }
+
+@media (max-width: 55rem) {
+  :root {
+    --width-global: 80%;
+  }
+}

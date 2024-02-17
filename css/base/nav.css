@@ -17,7 +17,7 @@
   text-align: center;
 
   padding: 0.25rem;
-  width: 12.5rem;
+  width: 25%;
 
   border-radius: 1rem;
 
@@ -39,31 +39,50 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: relative;
 
-  padding: 0.25rem;
-  width: 12.5rem;
+  width: 25%;
 
   color: var(--color-2);
+}
+
+.navbar-dropdown p {
+  text-align: center;
+
+  margin: 0;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+
+  width: 100%;
+
   background: var(--color-4);
 }
 
 .navbar-dropdown:hover .navbar-dropdown-menu {
-  max-height: 100%;
-  transition: max-height 0.5s ease-in;
+  /* BAD - need to manually change value when add another link */
+  max-height: 400%;
+  transition: max-height 0.25s ease-in;
 }
 
 .navbar-dropdown-menu {
   display: flex;
   flex-direction: column;
   position: absolute;
+
+  width: 100%;
+  margin-top: 1.75rem;
+
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-out;
-
-  margin-top: 1.5rem;
+  transition: max-height 0.25s ease-out;
 }
 
 .navbar-dropdown-menu a {
+  padding: 0;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  width: 100%;
+
   border-radius: 0;
 }
 
@@ -82,4 +101,31 @@
 
   background: var(--color-2) !important;
   color: var(--color-4) !important;
+}
+
+@media (max-width: 540px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar a {
+    width: 75%;
+  }
+  .navbar-dropdown-menu {
+    position: relative;
+    margin: 0;
+  }
+
+  .navbar-dropdown-menu a {
+    width: 100%;
+    margin: 0;
+  }
+
+  .navbar-dropdown {
+    width: 75%;
+  }
+
+  .navbar-dropdown:nth-of-type(1) {
+    margin: 0.5rem;
+  }
 }
