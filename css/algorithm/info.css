@@ -10,6 +10,8 @@
 }
 
 .info-section p {
+  text-align: justify;
+
   color: var(--color-5);
 }
 

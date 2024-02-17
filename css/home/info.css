@@ -1,7 +1,7 @@
 .overview-section {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 
   padding: 1rem;
   width: 100%;
@@ -19,25 +19,50 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 30%;
+
+  width: 12.5rem;
   margin-inline: 2rem;
 }
 
+.overview-container img {
+  height: 100px;
+}
+
 .overview-container p {
+  margin: 0;
+
   text-align: center;
 }
 
 .welcome-section {
-  padding: 1rem;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  width: 104%;
   margin-top: 0.75rem;
 
-  border-radius: 1rem;
-
-  background: var(--color-3);
   color: var(--color-2);
 }
 
 .welcome-section p {
+  text-align: justify;
+
   color: var(--color-5);
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 45.25%;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  background: var(--color-3);
+}
+
+.welcome-container h3 {
+  margin: 0;
+  margin-bottom: 0.5rem;
 }
