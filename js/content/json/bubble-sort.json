@@ -1,0 +1,131 @@
+{
+    "Default": 
+    {
+        "description":[
+            "This algorithm works by iterating through each pair in the array and swapping them if they are in the wrong order.",
+            "The outer loop puts the current largest element into it's correct place at the end of the array.",
+            "The inner loop achieves this by doing the swapping.",
+            "Since the previous largest element will be in it's place, the inner loop only needs to iterate up to this."
+        ],
+        "complexity":{
+            "best-case":"O(n^2)",
+            "worst-case":"O(n^2)",
+            "average-case":"O(n^2)",
+            "space":"O(1)"
+        },
+        "implementation": {
+            "javascript":[
+                "function bubbleSort(arr) {",
+                "  for (let i = arr.length - 1; i >= 0; i--) {",
+                "    for (let j = 0; j < i; j++) {",
+                "      if (arr[j] > arr[j + 1]) {",
+                "        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];",
+                "      }",
+                "    }",
+                "  }",
+                "  return arr;",
+                "}"
+            ],
+            "java":[
+                "public static int[] bubbleSort(int[] arr) {",
+                "  for (let i = arr.length - 1; i >= 0; i--) {",
+                "    for (let j = 0; j < i; j++) {",
+                "      if (arr[j] > arr[j + 1]) {",
+                "        int temp = arr[j];",
+                "        arr[j] = arr[j + 1];",
+                "        arr[j + 1] = arr[j];",
+                "      }",
+                "    }",
+                "  }",
+                "  return arr;",
+                "}"
+            ],
+            "python":[
+                "def bubble_sort(arr):",
+                "  for i in range(len(arr) - 1, 0, -1):",
+                "    for j in range(i):",
+                "      if arr[j] > arr[j + 1]:",
+                "        arr[j], arr[j + 1] = arr[j + 1], arr[j]",
+                "  return arr"
+            ],
+            "cpp":[
+                "STILL TO IMPLEMENT"
+            ],
+            "csharp":[
+                "STILL TO IMPLEMENT"
+            ],
+            "c":[
+                "STILL TO IMPLEMENT"
+            ]
+        }
+    },
+
+    "EarlyExit":
+    {
+        "description":[
+            "This is the optimised version of Bubble Sort.",
+            "It works similarly to the default version, but it has an early exit condition.",
+            "This condition is triggered when no swaps are made in the inner loop (meaning the array is already sorted)."
+        ],
+        "complexity":{
+            "best-case":"O(n)",
+            "worst-case":"O(n^2)",
+            "average-case":"O(n^2)",
+            "space":"O(1)"
+        },
+        "implementation": {
+            "javascript":[
+                "function bubbleSort(arr) {",
+                "  for (let i = arr.length - 1; i >= 0; i--) {",
+                "    let swapped = false;",
+                "    for (let j = 0; j < i; j++) {",
+                "      if (arr[j] > arr[j + 1]) {",
+                "        swapped = true;",
+                "        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];",
+                "      }",
+                "    }",
+                "    if (!swapped) break;",
+                "  }",
+                "  return arr;",
+                "}"
+            ],
+            "java":[
+                "public static int[] bubbleSort(int[] arr) {",
+                "  for (let i = arr.length - 1; i >= 0; i--) {",
+                "    boolean swapped = false;",
+                "    for (let j = 0; j < i; j++) {",
+                "      if (arr[j] > arr[j + 1]) {",
+                "        swapped = true;",
+                "        int temp = arr[j];",
+                "        arr[j] = arr[j + 1];",
+                "        arr[j + 1] = arr[j];",
+                "      }",
+                "    }",
+                "    if (!swapped) break;",
+                "  }",
+                "  return arr;",
+                "}"
+            ],
+            "python":[
+                "def bubble_sort(arr):",
+                "  for i in range(len(arr) - 1, 0, -1):",
+                "    swapped = False",
+                "    for j in range(i):",
+                "      if arr[j] > arr[j + 1]:",
+                "        swapped = True",
+                "        arr[j], arr[j + 1] = arr[j + 1], arr[j]",
+                "    if not swapped: break",
+                "  return arr"
+            ],
+            "cpp":[
+                "STILL TO IMPLEMENT"
+            ],
+            "csharp":[
+                "STILL TO IMPLEMENT"
+            ],
+            "c":[
+                "STILL TO IMPLEMENT"
+            ]
+        }
+    }
+}

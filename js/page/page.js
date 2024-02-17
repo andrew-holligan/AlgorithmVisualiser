@@ -1,7 +1,12 @@
 import { Canvas } from "../animation/canvas.js";
 import { SortAnimation } from "../animation/sort-animation.js";
-import { generateArr, randomiseArr, mapValueToRange } from "../misc/helpers.js";
-import { pageData } from "../content/page-data.js";
+import {
+  generateArr,
+  randomiseArr,
+  mapValueToRange,
+  removeChildren,
+  createChild,
+} from "../misc/helpers.js";
 
 const MIN_SLIDER_VALUE = 1;
 const MAX_SLIDER_VALUE = 20;
@@ -10,12 +15,14 @@ const MIN_CANVAS_ELEMENTS = 20;
 const MAX_CANVAS_ELEMENTS = 100;
 
 export class AlgorithmPage {
-  constructor(sortingAlgorithm, name) {
+  constructor(sortingAlgorithm, pageContent) {
     this.sortingAlgorithm = sortingAlgorithm;
-    this.name = name;
+    this.pageContent = pageContent;
+    this.pageIndex = 0;
 
     this.animation = null;
-    this.arr = generateArr(60);
+    this.size = 60;
+    this.arr = generateArr(this.size);
     this.swaps = null;
     // mapping range to its flipped self since smaller is faster
     // starts at 11 (in the middle of the slider)
@@ -30,8 +37,34 @@ export class AlgorithmPage {
     this.init();
   }
 
+  // INITIALISATION
+
   init() {
     // init page's events
+    let buttonSwitchSubpageLeft = document.getElementById(
+      "subpage-switcher-button-left"
+    );
+    buttonSwitchSubpageLeft.onclick = () => {
+      if (this.pageIndex <= 0) {
+        return;
+      }
+
+      this.pageIndex--;
+      this.updatePageDisplay();
+    };
+
+    let buttonSwitchSubpageRight = document.getElementById(
+      "subpage-switcher-button-right"
+    );
+    buttonSwitchSubpageRight.onclick = () => {
+      if (this.pageIndex >= this.pageContent.getAmount() - 1) {
+        return;
+      }
+
+      this.pageIndex++;
+      this.updatePageDisplay();
+    };
+
     let sliderSize = document.getElementById("input-slider-size");
     sliderSize.oninput = () => {
       this.sliderSizeEvent(sliderSize.value);
@@ -71,33 +104,11 @@ export class AlgorithmPage {
     // init page's visuals
     this.resize();
     addEventListener("resize", this.resize, false);
-    this.updateCodeDisplay("javascript");
+
+    this.updatePageDisplay();
   }
 
-  resize = () => {
-    let canvas = document.getElementById("canvas");
-    canvas.width = canvas.parentElement.clientWidth - "32";
-    canvas.height = canvas.width / 3;
-    Canvas.drawFrame(this.arr);
-  };
-
-  updateCodeDisplay(languageName) {
-    // update code display
-    let codeDisplay = document.getElementById("code-display");
-    // codeDisplay.setAttribute("data-highlighted", "no");
-    codeDisplay.innerHTML = pageData.get(this.name).get(languageName);
-
-    // set our active button
-    let codeButtons = Array.from(
-      document.getElementsByClassName("code-button")
-    );
-    codeButtons.forEach((button) => {
-      button.classList.remove("code-button-activated");
-    });
-    document
-      .getElementById("code-button-" + languageName)
-      .classList.add("code-button-activated");
-  }
+  // EVENTS
 
   sliderSizeEvent(value) {
     if (this.animation) {
@@ -105,14 +116,14 @@ export class AlgorithmPage {
       this.animation = null;
     }
 
-    let size = mapValueToRange(
+    this.size = mapValueToRange(
       value,
       MIN_SLIDER_VALUE,
       MAX_SLIDER_VALUE,
       MIN_CANVAS_ELEMENTS,
       MAX_CANVAS_ELEMENTS
     );
-    this.arr = generateArr(size);
+    this.arr = generateArr(this.size);
     Canvas.drawFrame(this.arr);
   }
 
@@ -146,7 +157,10 @@ export class AlgorithmPage {
     // generate new random arr and swaps
     this.arr = randomiseArr(this.arr);
     // decide what sorting algorithm to use
-    this.swaps = this.sortingAlgorithm.sort(this.arr);
+    this.swaps = this.sortingAlgorithm.run(
+      this.arr,
+      this.pageContent.getName(this.pageIndex)
+    );
     // initialise new animation
     this.animation = new SortAnimation(this.arr, this.swaps, this.speed);
 
@@ -157,5 +171,109 @@ export class AlgorithmPage {
     if (this.animation) {
       this.animation.start();
     }
+  }
+
+  // UPDATING PAGE CONTENT
+
+  resize = () => {
+    let canvas = document.getElementById("canvas");
+    canvas.width = canvas.parentElement.clientWidth - "32";
+    canvas.height = canvas.width / 3;
+    Canvas.drawFrame(this.arr);
+  };
+
+  updateCodeDisplay(languageName) {
+    // update code display
+    let codeDisplay = document.getElementById("code-display");
+    // TODO
+    codeDisplay.innerHTML = this.pageContent
+      .getImplementation(this.pageIndex)
+      .get(languageName);
+
+    // set our active button
+    let codeButtons = Array.from(
+      document.getElementsByClassName("code-button")
+    );
+    codeButtons.forEach((button) => {
+      button.classList.remove("code-button-activated");
+    });
+    document
+      .getElementById("code-button-" + languageName)
+      .classList.add("code-button-activated");
+  }
+
+  updatePageDisplay() {
+    if (this.animation) {
+      this.animation.stop();
+      this.animation = null;
+    }
+    this.arr = generateArr(this.size);
+    Canvas.drawFrame(this.arr);
+
+    // update switcher buttons
+    let buttonSwitchSubpageLeft = document.getElementById(
+      "subpage-switcher-button-left"
+    );
+    if (this.pageIndex > 0) {
+      buttonSwitchSubpageLeft.innerHTML = this.pageContent.getName(
+        this.pageIndex - 1
+      );
+      buttonSwitchSubpageLeft.style.opacity = "100%";
+      buttonSwitchSubpageLeft.style.pointerEvents = "auto";
+    } else {
+      buttonSwitchSubpageLeft.innerHTML = "";
+      buttonSwitchSubpageLeft.style.opacity = "50%";
+      buttonSwitchSubpageLeft.style.pointerEvents = "none";
+    }
+
+    let buttonSwitchSubpageRight = document.getElementById(
+      "subpage-switcher-button-right"
+    );
+    if (this.pageIndex < this.pageContent.getAmount() - 1) {
+      buttonSwitchSubpageRight.innerHTML = this.pageContent.getName(
+        this.pageIndex + 1
+      );
+      buttonSwitchSubpageRight.style.opacity = "100%";
+      buttonSwitchSubpageRight.style.pointerEvents = "auto";
+    } else {
+      buttonSwitchSubpageRight.innerHTML = "";
+      buttonSwitchSubpageRight.style.opacity = "50%";
+      buttonSwitchSubpageRight.style.pointerEvents = "none";
+    }
+
+    // update subpage name
+    document.getElementById("subpage-name").innerHTML =
+      this.pageContent.getName(this.pageIndex);
+
+    // update subpage description
+    let description = document.getElementById("info-description");
+    removeChildren(description);
+    createChild(description, "h3", "Description");
+    for (let sentence of this.pageContent.getDescription(this.pageIndex)) {
+      createChild(description, "p", sentence);
+    }
+
+    // update subpage time complexity
+    let timeComplexity = document.getElementById("time-values");
+    removeChildren(timeComplexity);
+    for (let c of ["best-case", "worst-case", "average-case"]) {
+      createChild(
+        timeComplexity,
+        "li",
+        this.pageContent.getComplexity(this.pageIndex).get(c)
+      );
+    }
+
+    // update subpage space complexity
+    let spaceComplexity = document.getElementById("space-values");
+    removeChildren(spaceComplexity);
+    createChild(
+      spaceComplexity,
+      "li",
+      this.pageContent.getComplexity(this.pageIndex).get("space")
+    );
+
+    // update code display
+    this.updateCodeDisplay("javascript");
   }
 }

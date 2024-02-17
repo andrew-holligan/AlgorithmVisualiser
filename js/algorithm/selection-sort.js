@@ -1,7 +1,13 @@
 import { Sort } from "./sort.js";
 
 export class SelectionSort extends Sort {
-  static sort(array) {
+  static run(array, choice) {
+    if (choice === "Default") {
+      return this.defaultSort(array);
+    }
+  }
+
+  static defaultSort(array) {
     let arr = [...array];
     let moves = [];
 

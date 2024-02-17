@@ -1,6 +1,12 @@
 import { Sort } from "./sort.js";
 
 export class HeapSort extends Sort {
+  static run(array, choice) {
+    if (choice === "Default") {
+      return this.defaultSort(array);
+    }
+  }
+
   static maxHeapify(moves, arr, i, n) {
     let l = 2 * i + 1;
     let r = 2 * i + 2;
@@ -47,7 +53,7 @@ export class HeapSort extends Sort {
     }
   }
 
-  static sort(array) {
+  static defaultSort(array) {
     let arr = [...array];
     let moves = [];
 

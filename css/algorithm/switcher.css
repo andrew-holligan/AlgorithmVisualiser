@@ -1,0 +1,36 @@
+.subpage-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: var(--width-global);
+}
+
+#subpage-name {
+  text-align: center;
+  width: 20%;
+
+  color: var(--color-1);
+}
+
+.subpage-switcher button {
+  text-decoration: none;
+
+  height: fit-content;
+  width: 20%;
+  padding: 0.25rem;
+
+  border-radius: 1rem;
+  border: 0.25rem solid var(--color-4);
+
+  color: var(--color-4);
+  background: var(--color-1);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.subpage-switcher button:hover {
+  cursor: pointer;
+
+  border: 0.25rem solid var(--color-2);
+}

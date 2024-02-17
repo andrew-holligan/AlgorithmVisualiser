@@ -1,7 +1,15 @@
 .info-section {
+  display: flex;
+  justify-content: space-between;
+
+  width: calc(100% + 2rem);
+
+  margin-top: 0.75rem;
+}
+
+#info-description {
   padding: 1rem;
   width: 100%;
-  margin-top: 0.75rem;
 
   border-radius: 1rem;
 
@@ -9,45 +17,42 @@
   color: var(--color-2);
 }
 
-.info-section p {
-  text-align: justify;
-
+#info-description p {
   color: var(--color-5);
 }
 
-.complexities {
+.info-complexities {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  float: right;
 
   padding: 0.5rem;
-  margin-left: 2rem;
-  margin-bottom: 2rem;
+  width: 30%;
+  margin-left: 0.75rem;
 
-  border-radius: 0.5rem;
+  border-radius: 1rem;
 
   background: var(--color-2);
   color: var(--color-4);
 }
 
 /* apply to all elements inside the div */
-.complexities > * {
+.info-complexities > * {
   margin: 0.25rem;
   width: 100%;
 
   text-align: center;
 }
 
-.complexities-time {
+.info-complexities-time {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.complexities ul {
+.info-complexities ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,11 +63,11 @@
   width: auto;
 }
 
-.complexities li {
+.info-complexities li {
   list-style-type: none;
 }
 
-.complexities h3 {
+.info-complexities h3 {
   padding-bottom: 0.2rem;
   border-bottom: 2px solid var(--color-4);
 }
@@ -73,7 +78,7 @@
     flex-direction: column;
     align-items: center;
   }
-  .complexities {
+  .info-complexities {
     float: none;
     margin: 0;
   }

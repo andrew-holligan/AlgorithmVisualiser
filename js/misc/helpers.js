@@ -51,3 +51,15 @@ export function mapValueToRange(
 //     end = (performance.now() + performance.timeOrigin) / 1000;
 //   }
 // }
+
+export function removeChildren(node) {
+  while (node.firstChild) {
+    node.removeChild(node.firstChild);
+  }
+}
+
+export function createChild(parent, node, text) {
+  let child = document.createElement(node);
+  child.innerHTML = text;
+  parent.appendChild(child);
+}

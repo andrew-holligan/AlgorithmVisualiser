@@ -1,6 +1,12 @@
 import { Sort } from "./sort.js";
 
 export class QuickSort extends Sort {
+  static run(array, choice) {
+    if (choice === "Default") {
+      return this.defaultSort(array);
+    }
+  }
+
   static partition(moves, arr, l, r) {
     let pivot = arr[r];
     let i = l - 1;
@@ -32,7 +38,7 @@ export class QuickSort extends Sort {
     }
   }
 
-  static sort(array) {
+  static defaultSort(array) {
     let arr = [...array];
     let moves = [];
 
