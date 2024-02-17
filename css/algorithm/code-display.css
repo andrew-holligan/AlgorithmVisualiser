@@ -86,6 +86,7 @@ pre {
   justify-content: center;
 
   width: 100%;
+  padding-bottom: 1rem;
 
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
@@ -96,7 +97,21 @@ pre {
 
 code {
   padding-top: 2rem !important;
-  padding-bottom: 2rem !important;
+  padding-bottom: 1rem !important;
 
   background: var(--color-5) !important;
+}
+
+@media (max-width: 570px) {
+  code {
+    padding-top: 1rem !important;
+    padding-bottom: 0 !important;
+    font-size: 0.5rem !important;
+  }
+}
+
+@media (max-width: 370px) {
+  code {
+    font-size: 0.3rem !important;
+  }
 }
