@@ -215,9 +215,7 @@ export class AlgorithmPage {
       "subpage-switcher-button-left"
     );
     if (this.pageIndex > 0) {
-      buttonSwitchSubpageLeft.innerHTML = this.pageContent.getName(
-        this.pageIndex - 1
-      );
+      buttonSwitchSubpageLeft.innerHTML = "<";
       buttonSwitchSubpageLeft.style.pointerEvents = "auto";
     } else {
       buttonSwitchSubpageLeft.innerHTML = "";
@@ -228,9 +226,7 @@ export class AlgorithmPage {
       "subpage-switcher-button-right"
     );
     if (this.pageIndex < this.pageContent.getAmount() - 1) {
-      buttonSwitchSubpageRight.innerHTML = this.pageContent.getName(
-        this.pageIndex + 1
-      );
+      buttonSwitchSubpageRight.innerHTML = ">";
       buttonSwitchSubpageRight.style.pointerEvents = "auto";
     } else {
       buttonSwitchSubpageRight.innerHTML = "";
