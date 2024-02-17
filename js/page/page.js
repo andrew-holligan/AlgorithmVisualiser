@@ -218,11 +218,9 @@ export class AlgorithmPage {
       buttonSwitchSubpageLeft.innerHTML = this.pageContent.getName(
         this.pageIndex - 1
       );
-      buttonSwitchSubpageLeft.style.opacity = "100%";
       buttonSwitchSubpageLeft.style.pointerEvents = "auto";
     } else {
       buttonSwitchSubpageLeft.innerHTML = "";
-      buttonSwitchSubpageLeft.style.opacity = "50%";
       buttonSwitchSubpageLeft.style.pointerEvents = "none";
     }
 
@@ -233,11 +231,9 @@ export class AlgorithmPage {
       buttonSwitchSubpageRight.innerHTML = this.pageContent.getName(
         this.pageIndex + 1
       );
-      buttonSwitchSubpageRight.style.opacity = "100%";
       buttonSwitchSubpageRight.style.pointerEvents = "auto";
     } else {
       buttonSwitchSubpageRight.innerHTML = "";
-      buttonSwitchSubpageRight.style.opacity = "50%";
       buttonSwitchSubpageRight.style.pointerEvents = "none";
     }
 
