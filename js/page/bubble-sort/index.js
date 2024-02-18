@@ -3,6 +3,8 @@ import { PageContent } from "../page-content.js";
 
 import { BubbleSort } from "./bubble-sort.js";
 
+// using fetch because works on mobile
+
 await fetch("./js/page/bubble-sort/index.json")
   .then((response) => {
     if (!response.ok) {

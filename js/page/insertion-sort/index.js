@@ -3,9 +3,19 @@ import { PageContent } from "../page-content.js";
 
 import { InsertionSort } from "./insertion-sort.js";
 
-const { default: json } = await import("./index.json", {
-  assert: { type: "json" },
-});
+// using fetch because works on mobile
 
-const pageContent = new PageContent(json);
-const insertionSortPage = new AlgorithmPage(InsertionSort, pageContent);
+await fetch("./js/page/insertion-sort/index.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("HTTP error " + response.status);
+    }
+    return response.json();
+  })
+  .then((json) => {
+    const pageContent = new PageContent(json);
+    const insertionSortPage = new AlgorithmPage(InsertionSort, pageContent);
+  })
+  .catch((error) => {
+    console.log(error);
+  });

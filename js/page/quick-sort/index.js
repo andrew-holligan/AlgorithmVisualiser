@@ -3,9 +3,19 @@ import { PageContent } from "../page-content.js";
 
 import { QuickSort } from "./quick-sort.js";
 
-const { default: json } = await import("./index.json", {
-  assert: { type: "json" },
-});
+// using fetch because works on mobile
 
-const pageContent = new PageContent(json);
-const quickSortPage = new AlgorithmPage(QuickSort, pageContent);
+await fetch("./js/page/quick-sort/index.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("HTTP error " + response.status);
+    }
+    return response.json();
+  })
+  .then((json) => {
+    const pageContent = new PageContent(json);
+    const quickSortPage = new AlgorithmPage(QuickSort, pageContent);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
