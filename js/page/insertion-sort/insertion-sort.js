@@ -1,4 +1,4 @@
-import { Sort } from "./sort.js";
+import { Sort } from "../sort.js";
 
 export class InsertionSort extends Sort {
   static run(array, choice) {
