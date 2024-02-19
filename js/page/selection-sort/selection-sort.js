@@ -1,33 +1,15 @@
-import { Sort } from "../sort.js";
+import { Default } from "./variants/default.js";
+import { BiDirectional } from "./variants/bi-directional.js";
 
-export class SelectionSort extends Sort {
+export class SelectionSort {
   static run(array, choice) {
-    if (choice === "Default") {
-      return this.defaultSort(array);
+    switch (choice) {
+      case "Default":
+        return Default.sort(array);
+      case "BiDirectional":
+        return BiDirectional.sort(array);
+      default:
+        return Default.sort(array);
     }
-  }
-
-  static defaultSort(array) {
-    let arr = [...array];
-    let moves = [];
-
-    let minI;
-    for (let i = 0; i < arr.length - 1; i++) {
-      minI = i;
-      for (let j = i + 1; j < arr.length; j++) {
-        if (arr[j] < arr[minI]) {
-          minI = j;
-        }
-      }
-
-      if (minI !== i) {
-        moves.push([i, arr[minI]]);
-        moves.push([minI, arr[i]]);
-
-        [arr[i], arr[minI]] = [arr[minI], arr[i]];
-      }
-    }
-
-    return moves;
   }
 }
