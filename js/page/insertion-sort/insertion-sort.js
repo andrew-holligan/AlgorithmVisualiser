@@ -1,32 +1,12 @@
-import { Sort } from "../sort.js";
+import { Default } from "./variants/default.js";
 
-export class InsertionSort extends Sort {
+export class InsertionSort {
   static run(array, choice) {
-    if (choice === "Default") {
-      return this.defaultSort(array);
+    switch (choice) {
+      case "Default":
+        return Default.sort(array);
+      default:
+        return Default.sort(array);
     }
-  }
-
-  static defaultSort(array) {
-    let arr = [...array];
-    let moves = [];
-
-    for (let j = 1; j <= arr.length - 1; j++) {
-      let key = arr[j];
-      let i = j - 1;
-      while (i >= 0 && arr[i] > key) {
-        // store clone of assignment
-        moves.push([i + 1, arr[i]]);
-
-        arr[i + 1] = arr[i];
-        i = i - 1;
-      }
-      // store clone of assignments
-      moves.push([i + 1, key]);
-
-      arr[i + 1] = key;
-    }
-
-    return moves;
   }
 }

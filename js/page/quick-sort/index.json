@@ -30,5 +30,38 @@
                 "STILL TO IMPLEMENT"
             ]
         }
+    },
+
+    "ThreeWay": 
+    {
+        "description":[
+            ""
+        ],
+        "complexity":{
+            "best-case":"",
+            "worst-case":"",
+            "average-case":"",
+            "space":""
+        },
+        "implementation": {
+            "javascript":[
+                "STILL TO IMPLEMENT"
+            ],
+            "java":[
+                "STILL TO IMPLEMENT"
+            ],
+            "python":[
+                "STILL TO IMPLEMENT"
+            ],
+            "cpp":[
+                "STILL TO IMPLEMENT"
+            ],
+            "csharp":[
+                "STILL TO IMPLEMENT"
+            ],
+            "c":[
+                "STILL TO IMPLEMENT"
+            ]
+        }
     }
 }
