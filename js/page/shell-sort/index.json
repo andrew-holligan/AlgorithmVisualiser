@@ -2,23 +2,77 @@
     "Default": 
     {
         "description":[
-            ""
+            "This algorithm works by sorting elements far from each other.",
+            "Then reducing the gap between the elements to be compared.",
+            "Since it starts with far-apart elements, it's fast at moving out of place elements into place quickly."
         ],
         "complexity":{
-            "best-case":"",
-            "worst-case":"",
-            "average-case":"",
-            "space":""
+            "best-case":"O(nlogn)",
+            "worst-case":"O(n^2)",
+            "average-case":"O(nlogn)",
+            "space":"O(1)"
         },
         "implementation": {
             "javascript":[
-                "STILL TO IMPLEMENT"
+                "function shellSort(arr) {",
+                "",
+                "  let h = 1;",
+                "  while (h < arr.length / 3) {",
+                "    h = 3 * h + 1;",
+                "  }",
+                "",
+                "  while (h >= 1) {",
+                "",
+                "    for (let i = h; i < arr.length; i++) {",
+                "      for (let j = i; j >= h && arr[j] < arr[j - h]; j -= h) {",
+                "        [arr[j], arr[j - h]] = [arr[j - h], arr[j]];",
+                "      }",
+                "    }",
+                "",
+                "    h = Math.floor(h / 3);",
+                "  }",
+                "",
+                "}"
             ],
             "java":[
-                "STILL TO IMPLEMENT"
+                "public void shellSort(arr) {",
+                "",
+                "  int h = 1;",
+                "  while (h < arr.length / 3) {",
+                "    h = 3 * h + 1;",
+                "  }",
+                "",
+                "  while (h >= 1) {",
+                "",
+                "    for (int i = h; i < arr.length; i++) {",
+                "      for (int j = i; j >= h && arr[j] < arr[j - h]; j -= h) {",
+                "        int temp = arr[j];",
+                "        arr[j] = arr[j - h];",
+                "        arr[j - h] = temp;",
+                "      }",
+                "    }",
+                "",
+                "    h = Math.floor(h / 3);",
+                "  }",
+                "",
+                "}"
             ],
             "python":[
-                "STILL TO IMPLEMENT"
+                "def shellSort(arr):",
+                "",
+                "  h = 1",
+                "  while h < (len(arr) / 3):",
+                "    h = 3 * h + 1",
+                "",
+                "  while h >= 1:",
+                "",
+                "    for i in range(h, len(arr)):",
+                "      j = i",
+                "      while j >= h and arr[j] < arr[j - h]:",
+                "        arr[j], arr[j - h] = arr[j - h], arr[j]",
+                "        j -= h",
+                "",
+                "    h = h // 3"
             ],
             "cpp":[
                 "STILL TO IMPLEMENT"

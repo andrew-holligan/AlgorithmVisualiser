@@ -1,6 +1,6 @@
 import { Default } from "./variants/default.js";
 
-export class ShellSort {
+export class RadixSort {
   static run(array, choice) {
     switch (choice) {
       case "Default":
