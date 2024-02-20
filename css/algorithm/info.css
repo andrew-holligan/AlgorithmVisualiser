@@ -21,9 +21,12 @@
   color: var(--color-5);
 }
 
+#info-description h3 {
+  margin: 0;
+}
+
 .info-complexities {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 
@@ -43,6 +46,11 @@
   width: 100%;
 
   text-align: center;
+}
+
+.info-complexities h3 {
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .info-complexities-time {
