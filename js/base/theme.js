@@ -26,7 +26,7 @@ async function setTheme(theme) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-	const theme = localStorage.getItem("theme") || "light";
+	const theme = localStorage.getItem("theme") || "dark";
 
 	await setTheme(theme);
 });
