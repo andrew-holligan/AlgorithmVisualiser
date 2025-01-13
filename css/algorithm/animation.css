@@ -1,104 +1,98 @@
-/* GLOBAL */
+/* global */
+
 .animation-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 0.75rem;
 
-  padding: 1rem;
-  width: 100%;
+	padding: 0.75rem;
+	width: 100%;
 
-  border-radius: 1rem;
+	border-radius: 0.4rem;
 
-  background: var(--color-3);
+	background: var(--card);
+	color: var(--card-foreground);
 }
 
-/* BUTTONS */
-.canvas-buttons {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
+/* buttons */
 
-  width: 100%;
-  margin-top: 1rem;
+.canvas-buttons {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	gap: 0.75rem;
+
+	width: 100%;
 }
 
 .canvas-button {
-  text-decoration: none;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+	padding: 0.25rem;
+	padding-inline: 1rem;
+	width: 100%;
+	height: 2rem;
 
-  padding: 0.25rem;
-  width: 12.5rem;
+	border: none;
+	border-radius: 0.4rem;
 
-  border-radius: 1rem;
-  border: 0;
-
-  color: var(--color-4);
-  background: var(--color-2);
-  font-size: 1rem;
-  font-weight: bold;
+	color: var(--secondary-foreground);
+	background: var(--secondary);
+	font-weight: bold;
+	font-size: 1rem;
 }
 
 .canvas-button:hover {
-  cursor: pointer;
+	cursor: pointer;
 
-  color: var(--color-2);
-  background: var(--color-4);
+	color: var(--accent-foreground);
+	background: var(--accent);
 }
 
-/* SLIDERS */
+/* sliders */
+
 .canvas-sliders {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	gap: 0.75rem;
 
-  margin-top: 1rem;
-  width: 95%;
-  padding: 0.25rem;
-  padding-inline: 1rem;
+	width: 100%;
 
-  border-radius: 1rem;
-
-  opacity: 50%;
-  transition: opacity 0.25s ease-in-out;
-
-  background: var(--color-2);
-  font-weight: bold;
-  color: var(--color-4);
+	font-weight: bold;
 }
 
-.canvas-sliders:hover {
-  opacity: 100%;
-  transition: opacity 0.25s ease-in-out;
+.canvas-sliders span {
+	width: 20%;
 }
 
 .canvas-slider {
-  /* get rid of default */
-  -webkit-appearance: none;
-  appearance: none;
+	/* get rid of default */
+	-webkit-appearance: none;
+	appearance: none;
 
-  height: 0.25rem;
-  width: 90%;
+	height: 0.25rem;
+	width: 100%;
 
-  border-radius: 1rem;
+	border-radius: 1rem;
 
-  background: var(--color-4);
+	background: var(--secondary);
+}
+
+.canvas-slider:hover {
+	background: var(--accent);
 }
 
 .canvas-slider::-webkit-slider-thumb {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .canvas-slider::-moz-range-thumb {
-  cursor: pointer;
-}
-
-@media (max-width: 540px) {
-  .canvas-button {
-    width: 40%;
-  }
+	cursor: pointer;
 }

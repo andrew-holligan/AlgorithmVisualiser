@@ -1,94 +1,32 @@
-.overview-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-
-  padding: 1rem;
-  width: 100%;
-  margin-top: 0.75rem;
-
-  border-radius: 1rem;
-
-  background: var(--color-3);
-  color: var(--color-5);
-  font-weight: bold;
-}
-
-.overview-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  width: 12.5rem;
-  margin-inline: 2rem;
-}
-
-.overview-container img {
-  height: 100px;
-}
-
-.overview-container p {
-  margin: 0;
-
-  text-align: center;
-}
-
 .welcome-section {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	gap: 1rem;
 
-  width: calc(100% + 2rem);
-  margin-top: 0.75rem;
-
-  color: var(--color-2);
-}
-
-.welcome-section p {
-  text-align: justify;
-
-  color: var(--color-5);
+	width: 100%;
 }
 
 .welcome-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 
-  padding: 1rem;
-  border-radius: 1rem;
+	padding: 0.75rem;
 
-  background: var(--color-3);
-}
+	border-radius: 0.4rem;
 
-.welcome-container:last-child {
-  margin-left: 0.75rem;
+	background: var(--card);
+	color: var(--card-foreground);
 }
 
 .welcome-container h3 {
-  margin: 0;
-  margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
+
+	border-bottom: 4px solid var(--border);
 }
 
-@media (max-width: 540px) {
-  .overview-section {
-    flex-direction: column;
-  }
-
-  .overview-container {
-    margin-inline: 0;
-  }
-
-  .welcome-section {
-    flex-direction: column;
-  }
-
-  .welcome-container {
-    width: calc(100% - 2rem);
-    margin-top: 0.75rem;
-  }
-
-  .welcome-container:last-child {
-    margin-left: 0;
-  }
+/* sm */
+@media (max-width: 640px) {
+	.welcome-section {
+		flex-direction: column;
+	}
 }

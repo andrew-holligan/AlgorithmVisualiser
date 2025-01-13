@@ -1,131 +1,129 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Provides a visual representation of the Sorting Algorithms"
-    />
-    <meta name="author" content="andrew-holligan" />
+	<head>
+		<!-- meta -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Andrew Holligan" />
+		<meta name="description" content="Provides a visual representation of Sorting Algorithms" />
 
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="./assets/images/favicon/favicon.ico"
-    />
+		<!-- favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+		<link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
-    <title>Sorting Visualised - Welcome</title>
+		<!-- title -->
+		<title>Sorting Visualised - Welcome</title>
 
-    <!-- css -->
-    <link rel="stylesheet" href="./css/base/variables.css" />
-    <link rel="stylesheet" href="./css/base/header.css" />
-    <link rel="stylesheet" href="./css/base/nav.css" />
-    <link rel="stylesheet" href="./css/base/main.css" />
-    <link rel="stylesheet" href="./css/base/footer.css" />
+		<!-- css -->
+		<link rel="stylesheet" href="./css/base/variables.css" />
+		<link rel="stylesheet" href="./css/base/header.css" />
+		<link rel="stylesheet" href="./css/base/nav.css" />
+		<link rel="stylesheet" href="./css/base/main.css" />
+		<link rel="stylesheet" href="./css/base/footer.css" />
+		<link rel="stylesheet" href="./css/home/info.css" />
+	</head>
 
-    <link rel="stylesheet" href="./css/home/info.css" />
-  </head>
+	<body>
+		<!-- header -->
+		<header class="header">
+			<h1>Sorting Visualised</h1>
+		</header>
 
-  <body>
-    <header class="header">
-      <h1>Sorting Visualised</h1>
-    </header>
+		<!-- navbar -->
+		<nav class="navbar">
+			<!-- home link -->
+			<a href="./" class="navbar-active-link">Home</a>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <a class="navbar-active-link" href="./">Home</a>
-      <div class="navbar-dropdown">
-        <p>Stable Sorts</p>
-        <div class="navbar-dropdown-menu">
-          <a href="./bubble-sort.html">Bubble Sort</a>
-          <a href="./insertion-sort.html">Insertion Sort</a>
-          <a href="./merge-sort.html">Merge Sort</a>
-          <a href="./radix-sort.html">Radix Sort</a>
-        </div>
-      </div>
-      <div class="navbar-dropdown">
-        <p>Unstable Sorts</p>
-        <div class="navbar-dropdown-menu">
-          <a href="./selection-sort.html">Selection Sort</a>
-          <a href="./shell-sort.html">Shell Sort</a>
-          <a href="./quick-sort.html">Quick Sort</a>
-          <a href="./heap-sort.html">Heap Sort</a>
-        </div>
-      </div>
-    </nav>
+			<!-- stable sorts links -->
+			<div class="navbar-dropdown">
+				<button class="navbar-dropdown-button">
+					<div></div>
+					<span>Stable Sorts</span>
+					<div data-embed-svg="chevron-down.svg" class="icon"></div>
+				</button>
 
-    <main class="main">
-      <div class="overview-section">
-        <div class="overview-container">
-          <p>
-            Learn about how these algorithms work and explore their complexity
-          </p>
-          <img
-            src="./assets/images/overview/icons8-learn.png"
-            alt="learning icon"
-          />
-        </div>
-        <div class="overview-container">
-          <p>Visualise the inner workings of sorting algorithms at play</p>
-          <img
-            src="./assets/images/overview/icons8-sorting.png"
-            alt="sorting icon"
-          />
-        </div>
-        <div class="overview-container">
-          <p>
-            See the code behind the algorithm in popular programming languages
-          </p>
-          <img src="./assets/images/overview/icons8-code.png" alt="code icon" />
-        </div>
-      </div>
+				<div class="navbar-dropdown-menu">
+					<a href="./bubble-sort.html">Bubble Sort</a>
+					<a href="./insertion-sort.html">Insertion Sort</a>
+					<a href="./merge-sort.html">Merge Sort</a>
+					<a href="./radix-sort.html">Radix Sort</a>
+				</div>
+			</div>
 
-      <div class="welcome-section">
-        <div class="welcome-container">
-          <h3>What is a Sorting Algorithm?</h3>
-          <p>
-            In programming you often deal with collections of data which you
-            might want to sort.
-          </p>
-          <p>
-            This could be to find the top or bottom n items of the collection.
-            It could also be because specific operations (like binary search)
-            only work on sorted collections.
-          </p>
-          <p>A Sorting Algorithm achieves this with any ordering of data.</p>
-        </div>
-        <div class="welcome-container">
-          <h3>Why are there multiple?</h3>
-          <p>
-            We are always trying to be efficient in our code. That means that we
-            want our sorting to be fast.
-          </p>
-          <p>
-            Different Sorting Algorithms perform differently when met with
-            certain types of data. Some Algorithms are faster when the
-            collection has many duplicates for example.
-          </p>
-          <p>
-            Each Algorithm has their own complexity dealing with it's speed and
-            overhead.
-          </p>
-        </div>
-      </div>
-    </main>
+			<!-- unstable sorts links -->
+			<div class="navbar-dropdown">
+				<button class="navbar-dropdown-button">
+					<div></div>
+					<span>Unstable Sorts</span>
+					<div data-embed-svg="chevron-down.svg" class="icon"></div>
+				</button>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer-left">
-        Dev
-        <a class="footer-link" href="https://github.com/andrew-holligan"
-          >andrew-holligan</a
-        >
-      </div>
-      <div class="footer-right">Copyright &copy 2024</div>
-    </footer>
+				<div class="navbar-dropdown-menu">
+					<a href="./selection-sort.html">Selection Sort</a>
+					<a href="./shell-sort.html">Shell Sort</a>
+					<a href="./quick-sort.html">Quick Sort</a>
+					<a href="./heap-sort.html">Heap Sort</a>
+				</div>
+			</div>
+		</nav>
 
-    <footer class="sub-footer">icons by icons8</footer>
-  </body>
+		<!-- main -->
+		<main class="main">
+			<!-- welcome section -->
+			<section class="welcome-section">
+				<!-- what is a sorting algorithm? -->
+				<article class="welcome-container">
+					<h3>What is a Sorting Algorithm?</h3>
+					<p>
+						In programming you often deal with collections of data
+						which you might want to sort.
+					</p>
+					<p>
+						This could be to find the top or bottom n items of the
+						collection. It could also be because specific operations
+						(like binary search) only work on sorted collections.
+					</p>
+					<p>
+						A Sorting Algorithm achieves this with any ordering of
+						data.
+					</p>
+				</article>
+
+				<!-- why are there multiple -->
+				<article class="welcome-container">
+					<h3>Why are there multiple?</h3>
+					<p>
+						We are always trying to be efficient in our code. That
+						means that we want our sorting to be fast.
+					</p>
+					<p>
+						Different Sorting Algorithms perform differently when
+						met with certain types of data. Some Algorithms are
+						faster when the collection has many duplicates for
+						example.
+					</p>
+					<p>
+						Each Algorithm has their own complexity dealing with
+						it's speed and overhead.
+					</p>
+				</article>
+			</section>
+		</main>
+
+		<!-- footer -->
+		<footer class="footer">
+			<div class="footer-left">
+				Made with ❤ by
+				<a href="https://github.com/andrew-holligan" class="footer-link">andrew-holligan</a>
+			</div>
+			<div class="footer-right">Copyright &copy 2024</div>
+		</footer>
+
+		<!-- js -->
+		<script src="./js/base/svg.js"></script>
+		<script src="./js/base/nav.js"></script>
+	</body>
 </html>

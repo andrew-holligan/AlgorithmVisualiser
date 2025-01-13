@@ -1,13 +1,13 @@
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-  margin: 0.75rem;
-
-  color: var(--color-2);
+	height: 3rem;
 }
 
 .header h1 {
-  margin: 0;
+	text-align: center;
+
+	color: var(--background-foreground);
 }

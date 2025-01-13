@@ -1,35 +1,42 @@
 .subpage-switcher {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
 
-  width: var(--width-global);
+	width: var(--width-global);
 }
 
 #subpage-name {
-  text-align: center;
+	text-align: center;
 
-  color: var(--color-1);
+	width: 12rem;
+
+	color: var(--background-foreground);
 }
 
 .subpage-switcher button {
-  text-decoration: none;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-  height: fit-content;
-  width: 20%;
-  padding: 0.25rem;
+	padding: 0.25rem;
+	padding-inline: 1rem;
+	width: 4rem;
+	height: 2rem;
 
-  border-radius: 1rem;
-  border: 0.25rem solid var(--color-4);
+	border: none;
+	border-radius: 0.4rem;
 
-  color: var(--color-4);
-  background: var(--color-1);
-  font-size: 1rem;
-  font-weight: bold;
+	color: var(--secondary-foreground);
+	background: var(--secondary);
+	font-weight: bold;
+	font-size: 1rem;
 }
 
 .subpage-switcher button:hover {
-  cursor: pointer;
+	cursor: pointer;
 
-  border: 0.25rem solid var(--color-2);
+	color: var(--accent-foreground);
+	background: var(--accent);
 }

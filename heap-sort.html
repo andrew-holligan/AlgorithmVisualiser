@@ -1,159 +1,181 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="andrew-holligan" />
+	<head>
+		<!-- meta -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Andrew Holligan" />
+		<meta name="description" content="Provides a visual representation of Sorting Algorithms" />
 
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="./assets/images/favicon/favicon.ico"
-    />
+		<!-- favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+		<link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
-    <title>Sorting Visualised - Heap Sort</title>
+		<!-- title -->
+		<title>Sorting Visualised - Heap Sort</title>
 
-    <!-- css -->
-    <link rel="stylesheet" href="./css/base/variables.css" />
-    <link rel="stylesheet" href="./css/base/header.css" />
-    <link rel="stylesheet" href="./css/base/nav.css" />
-    <link rel="stylesheet" href="./css/base/main.css" />
-    <link rel="stylesheet" href="./css/base/footer.css" />
+		<!-- css -->
+		<link rel="stylesheet" href="./css/base/variables.css" />
+		<link rel="stylesheet" href="./css/base/header.css" />
+		<link rel="stylesheet" href="./css/base/nav.css" />
+		<link rel="stylesheet" href="./css/base/main.css" />
+		<link rel="stylesheet" href="./css/base/footer.css" />
+		<link rel="stylesheet" href="./css/algorithm/switcher.css" />
+		<link rel="stylesheet" href="./css/algorithm/animation.css" />
+		<link rel="stylesheet" href="./css/algorithm/code-display.css" />
+		<link rel="stylesheet" href="./css/algorithm/info.css" />
 
-    <link rel="stylesheet" href="./css/algorithm/switcher.css" />
-    <link rel="stylesheet" href="./css/algorithm/animation.css" />
-    <link rel="stylesheet" href="./css/algorithm/code-display.css" />
-    <link rel="stylesheet" href="./css/algorithm/info.css" />
+		<!-- js -->
+		<script type="module" src="./js/page/heap-sort/index.js"></script>
+	</head>
 
-    <!-- js -->
-    <script type="module" src="./js/page/heap-sort/index.js"></script>
-  </head>
+  	<body>
+		<!-- header -->
+		<header class="header">
+		<h1>Heap Sort</h1>
+		</header>
 
-  <body>
-    <header class="header">
-      <h1>Heap Sort</h1>
-    </header>
+    	<!-- navbar -->
+		<nav class="navbar">
+			<!-- home link -->
+			<a href="./">Home</a>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <a href="./">Home</a>
-      <div class="navbar-dropdown">
-        <p>Stable Sorts</p>
-        <div class="navbar-dropdown-menu">
-          <a href="./bubble-sort.html">Bubble Sort</a>
-          <a href="./insertion-sort.html">Insertion Sort</a>
-          <a href="./merge-sort.html">Merge Sort</a>
-          <a href="./radix-sort.html">Radix Sort</a>
-        </div>
-      </div>
-      <div class="navbar-dropdown">
-        <p>Unstable Sorts</p>
-        <div class="navbar-dropdown-menu">
-          <a href="./selection-sort.html">Selection Sort</a>
-          <a href="./shell-sort.html">Shell Sort</a>
-          <a href="./quick-sort.html">Quick Sort</a>
-          <a class="navbar-active-link" href="./heap-sort.html">Heap Sort</a>
-        </div>
-      </div>
-    </nav>
+			<!-- stable sorts links -->
+			<div class="navbar-dropdown">
+				<button class="navbar-dropdown-button">
+					<div></div>
+					<span>Stable Sorts</span>
+					<div data-embed-svg="chevron-down.svg" class="icon"></div>
+				</button>
 
-    <!-- SUB PAGE SWITCHER -->
-    <nav class="subpage-switcher">
-      <button id="subpage-switcher-button-left"></button>
-      <h2 id="subpage-name"></h2>
-      <button id="subpage-switcher-button-right"></button>
-    </nav>
+				<div class="navbar-dropdown-menu">
+					<a href="./bubble-sort.html">Bubble Sort</a>
+					<a href="./insertion-sort.html">Insertion Sort</a>
+					<a href="./merge-sort.html">Merge Sort</a>
+					<a href="./radix-sort.html">Radix Sort</a>
+				</div>
+			</div>
 
-    <main class="main">
-      <!-- SORTING ANIMATION -->
-      <div class="animation-section">
-        <canvas id="canvas"></canvas>
+			<!-- unstable sorts links -->
+			<div class="navbar-dropdown">
+				<button class="navbar-dropdown-button">
+					<div></div>
+					<span>Unstable Sorts</span>
+					<div data-embed-svg="chevron-down.svg" class="icon"></div>
+				</button>
 
-        <div class="canvas-sliders">
-          Size
-          <input
-            type="range"
-            width="300"
-            min="1"
-            max="20"
-            step="1"
-            id="input-slider-size"
-            class="canvas-slider"
-          />
-        </div>
+				<div class="navbar-dropdown-menu">
+					<a href="./selection-sort.html">Selection Sort</a>
+					<a href="./shell-sort.html">Shell Sort</a>
+					<a href="./quick-sort.html">Quick Sort</a>
+					<a href="./heap-sort.html" class="navbar-active-link">Heap Sort</a>
+				</div>
+			</div>
+		</nav>
 
-        <div class="canvas-sliders">
-          Speed
-          <input
-            type="range"
-            width="300"
-            min="1"
-            max="20"
-            step="1"
-            id="input-slider-speed"
-            class="canvas-slider"
-          />
-        </div>
+		<!-- sub page switcher -->
+		<nav class="subpage-switcher">
+			<button id="subpage-switcher-button-left"></button>
+			<h2 id="subpage-name"></h2>
+			<button id="subpage-switcher-button-right"></button>
+		</nav>
 
-        <div class="canvas-buttons">
-          <button class="canvas-button" id="input-button-randomise">
-            Randomise
-          </button>
-          <button class="canvas-button" id="input-button-sort">Sort</button>
-        </div>
-      </div>
+    	<main class="main">
+      		<!-- sorting animation -->
+			<section class="animation-section">
+				<canvas id="canvas"></canvas>
 
-      <!-- SORTING DESCRIPTION -->
-      <div class="info-section">
-        <!-- CONTENT -->
-        <div id="info-description">
-          <h3>Description</h3>
-        </div>
+				<div class="canvas-sliders">
+					<span>Size</span>
+					<input
+						type="range"
+						min="1"
+						max="20"
+						step="1"
+						id="input-slider-size"
+						class="canvas-slider"
+					/>
+				</div>
 
-        <!-- COMPLEXITIES TAB -->
-        <div class="info-complexities">
-          <h3>Complexity</h3>
-          <h5>Time</h5>
-          <div class="info-complexities-time">
-            <ul class="time-cases">
-              <li>Best Case</li>
-              <li>Worst Case</li>
-              <li>Average Case</li>
-            </ul>
-            <ul id="time-values"></ul>
-          </div>
-          <h5>Space</h5>
-          <ul id="space-values"></ul>
-        </div>
-      </div>
+				<div class="canvas-sliders">
+					<span>Speed</span>
+					<input
+						type="range"
+						min="1"
+						max="20"
+						step="1"
+						id="input-slider-speed"
+						class="canvas-slider"
+					/>
+				</div>
 
-      <!-- IMPLEMENTATION CODE -->
-      <div class="code-section">
-        <h2>Implementation</h2>
-        <div class="code-buttons">
-          <button id="code-button-javascript" class="code-button"></button>
-          <button id="code-button-java" class="code-button"></button>
-          <button id="code-button-python" class="code-button"></button>
-          <button id="code-button-cpp" class="code-button"></button>
-          <button id="code-button-csharp" class="code-button"></button>
-          <button id="code-button-c" class="code-button"></button>
-        </div>
-        <pre><code id="code-display"></code></pre>
-      </div>
-    </main>
+				<div class="canvas-buttons">
+					<button class="canvas-button" id="input-button-randomise">
+						Randomise
+					</button>
+					<button class="canvas-button" id="input-button-sort">
+						Sort
+					</button>
+				</div>
+			</section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer-left">
-        Dev
-        <a class="footer-link" href="https://github.com/andrew-holligan"
-          >andrew-holligan</a
-        >
-      </div>
-      <div class="footer-right">Copyright &copy 2024</div>
-    </footer>
+      		<!-- sorting info -->
+      		<section class="info-section">
+				<!-- description -->
+        		<article id="info-description">
+          			<h3>Description</h3>
+				</article>
 
-    <footer class="sub-footer">icons by icons8</footer>
-  </body>
+        		<!-- complexity -->
+        		<article class="info-complexities">
+          			<h3>Complexity</h3>
+
+          			<h5>Time</h5>
+          			<div class="info-complexities-time">
+            			<ul class="time-cases">
+              				<li>Best Case</li>
+              				<li>Worst Case</li>
+              				<li>Average Case</li>
+            			</ul>
+            			<ul id="time-values"></ul>
+          			</div>
+					
+          			<h5>Space</h5>
+					<div class="info-complexities-space">
+          				<ul id="space-values"></ul>
+					</div>
+				</article>
+      		</section>
+
+      		<!-- sorting implementation -->
+      		<section class="code-section">
+        		<h2>Implementation</h2>
+				<div class="code-buttons">
+					<button id="code-button-javascript" class="code-button"></button>
+					<button id="code-button-java" class="code-button"></button>
+					<button id="code-button-python" class="code-button"></button>
+					<button id="code-button-cpp" class="code-button"></button>
+					<button id="code-button-csharp" class="code-button"></button>
+					<button id="code-button-c" class="code-button"></button>
+				</div>
+        		<pre><code id="code-display"></code></pre>
+      		</section>
+    	</main>
+
+		<!-- footer -->
+		<footer class="footer">
+			<div class="footer-left">
+				Made with ❤ by
+				<a href="https://github.com/andrew-holligan" class="footer-link">andrew-holligan</a>
+			</div>
+			<div class="footer-right">Copyright &copy 2024</div>
+		</footer>
+
+		<!-- js -->
+		<script src="./js/base/svg.js"></script>
+		<script src="./js/base/nav.js"></script>
+  	</body>
 </html>

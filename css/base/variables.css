@@ -1,26 +1,96 @@
+* {
+	margin: 0;
+	padding: 0;
+
+	box-sizing: border-box;
+}
+
 :root {
-  --color-1: #b300ff;
-  --color-2: #deacf5;
-  --color-3: #545454;
-  --color-4: #2f2f2f;
-  --color-5: #dadada;
+	--width-global: 46rem;
+	--padding-global: 1rem;
 
-  --font: Helvetica;
+	--font: monospace;
 
-  --width-global: 50rem;
+	--background: hsl(282, 100%, 95%);
+	--foreground: hsl(282, 5%, 0%);
+	--card: hsl(282, 50%, 90%);
+	--card-foreground: hsl(282, 5%, 10%);
+	--popover: hsl(282, 100%, 95%);
+	--popover-foreground: hsl(282, 100%, 0%);
+	--primary: hsl(282, 100%, 50%);
+	--primary-foreground: hsl(0, 0%, 100%);
+	--secondary: hsl(282, 30%, 70%);
+	--secondary-foreground: hsl(0, 0%, 0%);
+	--muted: hsl(244, 30%, 85%);
+	--muted-foreground: hsl(282, 5%, 35%);
+	--accent: hsl(244, 30%, 80%);
+	--accent-foreground: hsl(282, 5%, 10%);
+	--destructive: hsl(0, 100%, 30%);
+	--destructive-foreground: hsl(282, 5%, 90%);
+	--border: hsl(282, 30%, 50%);
+}
+
+.dark {
+	--background: hsl(282, 50%, 5%);
+	--foreground: hsl(282, 5%, 90%);
+	--card: hsl(282, 50%, 0%);
+	--card-foreground: hsl(282, 5%, 90%);
+	--popover: hsl(282, 50%, 5%);
+	--popover-foreground: hsl(282, 5%, 90%);
+	--primary: hsl(282, 100%, 50%);
+	--primary-foreground: hsl(0, 0%, 100%);
+	--secondary: hsl(282, 30%, 10%);
+	--secondary-foreground: hsl(0, 0%, 100%);
+	--muted: hsl(244, 30%, 15%);
+	--muted-foreground: hsl(282, 5%, 60%);
+	--accent: hsl(244, 30%, 15%);
+	--accent-foreground: hsl(282, 5%, 90%);
+	--destructive: hsl(0, 100%, 30%);
+	--destructive-foreground: hsl(282, 5%, 90%);
+	--border: hsl(282, 30%, 18%);
 }
 
 body {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 1rem;
 
-  background: var(--color-4);
-  font-family: var(--font);
+	min-height: 100vh;
+
+	padding: var(--padding-global);
+
+	background: var(--background);
+	font-family: var(--font);
 }
 
-@media (max-width: 55rem) {
-  :root {
-    --width-global: 80%;
-  }
+.icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+/* lg */
+@media (max-width: 1024px) {
+	:root {
+		--width-global: 46rem; /* 736px */
+	}
+}
+
+/* md */
+@media (max-width: 768px) {
+	:root {
+		--width-global: 38rem; /* 608px */
+	}
+}
+
+/* sm */
+@media (max-width: 640px) {
+	:root {
+		--width-global: 100%;
+		--padding-global: 0.5rem;
+	}
 }
