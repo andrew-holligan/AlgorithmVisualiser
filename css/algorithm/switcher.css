@@ -11,7 +11,7 @@
 
 	width: 12rem;
 
-	color: var(--background-foreground);
+	color: var(--foreground);
 }
 
 .subpage-switcher button {

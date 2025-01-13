@@ -1,13 +1,33 @@
 .header {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 
+	width: var(--width-global);
 	height: 3rem;
 }
 
 .header h1 {
 	text-align: center;
 
-	color: var(--background-foreground);
+	color: var(--foreground);
+}
+
+.header div,
+#theme-button {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+#theme-button {
+	border: none;
+
+	background-color: transparent;
+	color: var(--foreground);
+}
+
+#theme-button:hover {
+	cursor: pointer;
+
+	color: var(--accent);
 }
