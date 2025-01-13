@@ -5,18 +5,33 @@
 	width: 100%;
 }
 
-#info-description {
+#info-description,
+.info-complexities {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
 
-	width: 100%;
 	padding: 0.75rem;
 
 	border-radius: 0.4rem;
+	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+		0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+	font-size: 0.75rem;
+}
+
+#info-description {
+	width: 70%;
 
 	background: var(--card);
 	color: var(--card-foreground);
+}
+
+.info-complexities {
+	width: 30%;
+
+	background: var(--secondary);
+	color: var(--secondary-foreground);
 }
 
 #info-description h3,
@@ -26,28 +41,8 @@
 	border-bottom: 4px solid var(--border);
 }
 
-.info-complexities {
-	display: flex;
-	flex-direction: column;
-
-	padding: 0.75rem;
-	width: 30%;
-
-	border-radius: 0.4rem;
-
-	background: var(--secondary);
-	color: var(--secondary-foreground);
-}
-
-/* apply to all elements inside the div */
-.info-complexities > * {
-	margin: 0.25rem;
-	width: 100%;
-}
-
-.info-complexities h3 {
-	margin: 0;
-	margin-bottom: 1rem;
+.info-complexities h5 {
+	font-size: 0.8rem;
 }
 
 .info-complexities-time,
